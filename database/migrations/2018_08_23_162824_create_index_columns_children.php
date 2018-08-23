@@ -29,8 +29,7 @@ class CreateIndexColumnsChildren extends Migration
     public function down()
     {
         Schema::connection($this->connection)->table('children', function (Blueprint $collection) {
-            $collection->dropIndex('test');
-
+            $collection->drop();
         });
     }
 }

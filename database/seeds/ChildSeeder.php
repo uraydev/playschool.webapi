@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class ChildSeeder extends Seeder
 {
@@ -11,7 +12,8 @@ class ChildSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('children')->delete();
+        DB::collection('children')->delete();
+        DB::collection('children')->insert(['name' => 'John Doe']);
 
 //        for ($i = 1; $i <= 22; $i++) {
 //            DB::table('gto')->insert([
