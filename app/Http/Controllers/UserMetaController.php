@@ -52,20 +52,28 @@ class UserMetaController extends _BaseApiController
     public function show($id)
     {
         //
-    }    
+    }
 
     /**
      * Update
-     * 
+     *
      * Обновляет метаданные о пользователе
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param FormUserMeta $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(FormUserMeta $request, $id)
     {
-        //
+        try {
+            $data = $this->contextService->update_object(Input::all(), $id);
+            if ($data === 0) return response()->json('Ошибка обновления объекта', 400, $this->header, JSON_UNESCAPED_UNICODE);
+            return response()->json(true, 200, $this->header, JSON_UNESCAPED_UNICODE);
+
+        } catch(Exception $e)
+        {
+            return response()->json($e->getMessage(), 500, $this->header, JSON_UNESCAPED_UNICODE);
+        }
     }
 
     /**

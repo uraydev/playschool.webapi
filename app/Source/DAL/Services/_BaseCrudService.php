@@ -25,6 +25,21 @@ abstract class BaseCrudService
         return $this->context->all();
     }
 
+    /**
+     * Ñîçäàåò íîâûé îáúåêò
+     * @param $array
+     * @param $id
+     * @return mixed
+     */
+    public function  update_object($array, $id){
+        return $this->context->update($array, $id);
+    }
+
+    /**
+     * Ñîçäàåò íîâûé îáúåêò
+     * @param $array
+     * @return mixed
+     */
     public function  new_object($array){
         return $this->context->create($array);
     }

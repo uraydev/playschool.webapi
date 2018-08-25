@@ -17,16 +17,16 @@ class UserMetaService extends BaseCrudService implements IUserMetaService
         parent::__construct($context);
     }
 
-    /**
-     * Обновляет объект
-     * @param $id
-     * @param $data
-     * @return mixed
-     */
-    public function update_object($id, $data)
-    {
-        // TODO: Implement update_object() method.
-    }
+//    /**
+//     * Обновляет объект
+//     * @param $id
+//     * @param $data
+//     * @return mixed
+//     */
+//    public function update_object($id, $data)
+//    {
+//        // TODO: Implement update_object() method.
+//    }
 
 //    /**
 //     * Создает новый объект
