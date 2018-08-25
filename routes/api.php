@@ -17,6 +17,19 @@ use Illuminate\Http\Request;
 //     return $request->user();
 // });
 
-Route::resource('child','ChildController');
-Route::resource('user','UserController');
-Route::resource('user_meta','UserMetaController');
+Route::group(array('prefix' => 'v1', 'middleware' => []), function () {
+  // Route::get('user', ['as' => 'user.index', 'uses' => 'UserController@index']);
+  // Route::get('user/{id}', ['as' => 'user.show', 'uses' => 'UserController@show']);
+  // Route::post('user', ['as' => 'user.store', 'uses' => 'UserController@store']);
+  // Route::put('user/{id}', ['as' => 'user.update', 'uses' => 'UserController@update']);
+  
+  Route::apiResource('user','UserController');
+  Route::apiResource('user_meta','UserMetaController');
+
+  // Route::resource('child','ChildController');
+
+  // Route::resource('user_meta','UserMetaController');
+});
+
+
+

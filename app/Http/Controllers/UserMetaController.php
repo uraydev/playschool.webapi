@@ -5,10 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\UserMeta;
 
+/**
+ * @resource UserMeta
+ */
 class UserMetaController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Get all
+     * 
+     * Выводит коллекцию всех метаданных пользователей
      *
      * @return \Illuminate\Http\Response
      */
@@ -20,18 +25,10 @@ class UserMetaController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
+     * Store
+     * 
+     * Добавляет метаданные для пользователя
+     * 
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
@@ -41,7 +38,9 @@ class UserMetaController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Get UserMeta
+     * 
+     * Выводит метаданные по ID пользователя
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -49,21 +48,12 @@ class UserMetaController extends Controller
     public function show($id)
     {
         //
-    }
+    }    
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
+     * Update
+     * 
+     * Обновляет метаданные о пользователе
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -75,7 +65,9 @@ class UserMetaController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove
+     * 
+     * Удаляет метаданные пользователя
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response

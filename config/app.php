@@ -178,7 +178,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Jenssegers\Mongodb\MongodbServiceProvider::class,
-
+        Mpociot\ApiDoc\ApiDocGeneratorServiceProvider::class,
     ],
 
     /*

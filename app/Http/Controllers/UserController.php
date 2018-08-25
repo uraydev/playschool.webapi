@@ -5,10 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 
+/**
+ * @resource User
+ *
+ */
 class UserController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Get all
+     * 
+     * Выводит коллекцию всех пользователей
      *
      * @return \Illuminate\Http\Response
      */
@@ -20,28 +26,9 @@ class UserController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
+     * Get User
+     * 
+     * Выводит пользователей по ID
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -52,18 +39,22 @@ class UserController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
+     * Store
+     * 
+     * Добавляет нового пользователя
+     * 
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function store(Request $request)
     {
         //
-    }
+    }    
 
     /**
-     * Update the specified resource in storage.
+     * Update
+     * 
+     * Обновляет данные о пользователе
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -75,7 +66,9 @@ class UserController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove
+     * 
+     * Удаляет пользователя
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
