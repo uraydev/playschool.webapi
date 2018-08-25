@@ -7,13 +7,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
 use Session;
 
-
 class _BaseApiController extends Controller
 {
     protected $contextService;
-    protected $header;
     protected $directory;
     protected $indexRoute;
+
+    protected $header = [ 'Content-Type' => 'application/json; charset=utf-8' ];
 
     public function __construct(ICrud $service)
     {
@@ -74,19 +74,20 @@ class _BaseApiController extends Controller
     protected function index()
     {
         $data = $this->contextService->get_objects();
-        $headers = [ 'Content-Type' => 'application/json; charset=utf-8' ];
-        return response()->json($data, 200, $headers, JSON_UNESCAPED_UNICODE);
+        return response()->json($data, 200, $this->header, JSON_UNESCAPED_UNICODE);
     }
 
-    /**
-     * Выводит страницу для создания объекта
-     *
-     * @return \Illuminate\Http\Response
-     */
-    protected function create()
-    {
-        return View($this->getDirectory() . '.create')->with('index_route',$this->indexRoute);
-    }
+//    /**
+//     * Выводит страницу для создания объекта
+//     *
+//     * @param Request $request
+//     * @return \Illuminate\Http\Response
+//     */
+//    protected function store(Request $request)
+//    {
+//        $this->contextService->new_object($request->all());
+////        return View($this->getDirectory() . '.create')->with('index_route',$this->indexRoute);
+//    }
 
     /**
      * Выводит страницу для редактирования объекта

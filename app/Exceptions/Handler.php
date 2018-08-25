@@ -48,6 +48,18 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        if ($request->ajax() || $request->wantsJson())
+        {
+            $json = [
+               'success' => false,
+               'error' => [
+                   'code' => $exception->getCode(),
+                   'message' => $exception->getMessage()
+               ]
+            ];
+            $headers = [ 'Content-Type' => 'application/json; charset=utf-8' ];
+            return response()->json($json, 400, $headers, JSON_UNESCAPED_UNICODE);
+        }
         return parent::render($request, $exception);
     }
 }

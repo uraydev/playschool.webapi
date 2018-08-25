@@ -25,6 +25,10 @@ abstract class BaseCrudService
         return $this->context->all();
     }
 
+    public function  new_object($array){
+        return $this->context->create($array);
+    }
+
     /**
      * Поиск объекта по id
      * @param $id

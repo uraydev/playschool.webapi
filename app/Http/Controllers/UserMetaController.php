@@ -1,8 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Requests\FormUserMeta;
 use App\Source\DAL\Interfaces\Services\IUserMetaService;
-
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
+use Mockery\CountValidator\Exception;
 
 /**
  * @resource UserMeta
@@ -19,15 +22,23 @@ class UserMetaController extends _BaseApiController
 
     /**
      * Store
-     * 
+     *
      * Добавляет метаданные для пользователя
-     * 
-     * @param  \Illuminate\Http\Request  $request
+     *
+     * @param FormUserMeta $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FormUserMeta $request)
     {
-        //
+        try {
+            $data = $this->contextService->new_object(Input::all());
+            if ($data === null) return response()->json('Ошибка создания объекта', 400, $this->header, JSON_UNESCAPED_UNICODE);
+            return response()->json($data->toArray(), 200, $this->header, JSON_UNESCAPED_UNICODE);
+
+        } catch(Exception $e)
+        {
+            return response()->json($e->getMessage(), 500, $this->header, JSON_UNESCAPED_UNICODE);
+        }
     }
 
     /**

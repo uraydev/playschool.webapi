@@ -13,6 +13,6 @@ class UserMeta extends Eloquent
     protected $primaryKey = '_id';
 
     protected $fillable = [
-        'key', 'value', 'user_id'
+        'key', 'value', 'user__id'
     ];
 }

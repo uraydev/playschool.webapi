@@ -28,13 +28,13 @@ class UserMetaService extends BaseCrudService implements IUserMetaService
         // TODO: Implement update_object() method.
     }
 
-    /**
-     * Создает новый объект
-     * @param $data
-     * @return mixed
-     */
-    public function new_object($data)
-    {
-        // TODO: Implement new_object() method.
-    }
+//    /**
+//     * Создает новый объект
+//     * @param $data
+//     * @return mixed
+//     */
+//    public function new_object($data)
+//    {
+//        // TODO: Implement new_object() method.
+//    }
 }
