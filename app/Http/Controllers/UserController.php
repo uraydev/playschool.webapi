@@ -2,15 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\User;
+use App\Source\DAL\Interfaces\Services\IUserService;
 
 /**
  * @resource User
  *
  */
-class UserController extends Controller
+class UserController extends _BaseApiController
 {
+
+
+    /**
+     * UserController constructor.
+     * @param IUserService $service
+     * @internal param IUserService $userService
+     */
+    public function __construct(IUserService $service)
+    {
+        parent::__construct($service);
+    }
+
+
     /**
      * Get all
      * 
@@ -18,12 +30,12 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $data = User::all();
-        $headers = [ 'Content-Type' => 'application/json; charset=utf-8' ];
-        return response()->json($data, 200, $headers, JSON_UNESCAPED_UNICODE);
-    }
+//    public function index()
+//    {
+//        $data = User::all();
+//        $headers = [ 'Content-Type' => 'application/json; charset=utf-8' ];
+//        return response()->json($data, 200, $headers, JSON_UNESCAPED_UNICODE);
+//    }
 
     /**
      * Get User

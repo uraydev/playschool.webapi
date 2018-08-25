@@ -179,6 +179,8 @@ return [
 
         Jenssegers\Mongodb\MongodbServiceProvider::class,
         Mpociot\ApiDoc\ApiDocGeneratorServiceProvider::class,
+        App\Source\IoCServiceProvider::class,
+
     ],
 
     /*

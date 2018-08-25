@@ -1,27 +1,20 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Source\DAL\Interfaces\Services\IUserMetaService;
 
-use Illuminate\Http\Request;
-use App\Models\UserMeta;
 
 /**
  * @resource UserMeta
  */
-class UserMetaController extends Controller
+class UserMetaController extends _BaseApiController
 {
     /**
-     * Get all
-     * 
-     * Выводит коллекцию всех метаданных пользователей
-     *
-     * @return \Illuminate\Http\Response
+     * @param IUserMetaService $service
      */
-    public function index()
+    public function __construct(IUserMetaService $service)
     {
-        $data = UserMeta::all();
-        $headers = [ 'Content-Type' => 'application/json; charset=utf-8' ];
-        return response()->json($data, 200, $headers, JSON_UNESCAPED_UNICODE);
+        parent::__construct($service);
     }
 
     /**
