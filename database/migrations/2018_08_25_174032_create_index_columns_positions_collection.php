@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Jenssegers\Mongodb\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateIndexColumnsUsersMetaCollection extends Migration
+class CreateIndexColumnsPositionsCollection extends Migration
 {
     protected $connection = 'mongodb';
 
@@ -15,10 +15,9 @@ class CreateIndexColumnsUsersMetaCollection extends Migration
      */
     public function up()
     {
-        Schema::connection($this->connection)->table('users_meta', function (Blueprint $collection) {
-            $collection->index('user__id');
-            $collection->index('key');
-            $collection->index('value');
+        Schema::connection($this->connection)->table('positions', function (Blueprint $collection) {
+            $collection->index('name');
+            $collection->index('description');
             $collection->timestamps();
         });
     }
@@ -30,7 +29,7 @@ class CreateIndexColumnsUsersMetaCollection extends Migration
      */
     public function down()
     {
-        Schema::connection($this->connection)->table('users_meta', function (Blueprint $collection) {
+        Schema::connection($this->connection)->table('positions', function (Blueprint $collection) {
             $collection->drop();
         });
     }

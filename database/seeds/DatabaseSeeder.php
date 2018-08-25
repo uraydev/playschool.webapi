@@ -13,6 +13,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call('UserSeeder');
         $this->call('UserMetaSeeder');
+        $this->call('PositionSeeder');
         $this->call('ChildSeeder');
 
         // $this->call(UsersTableSeeder::class);

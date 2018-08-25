@@ -20,6 +20,7 @@ class CreateIndexColumnsUsersCollection extends Migration
             $collection->index('surname');
             $collection->index('name');
             $collection->index('middlename');
+            $collection->timestamps();
         });
     }
 
