@@ -62,15 +62,9 @@ abstract class BaseCrudService
     public function remove_object($id)
     {
         try {
-            $object = $this->context->find($id);
-            if ($object == null) throw new Exception('Объект не найден');
-            DB::beginTransaction();
             $this->context->delete($id);
-            DB::commit();
             return true;
         } catch (Exception $e) {
-            Session::flash('error_msg', $e->getMessage());
-            DB::rollBack();
             return false;
         }
     }
