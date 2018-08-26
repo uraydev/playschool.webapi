@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
         $this->call('UserSeeder');
         $this->call('UserMetaSeeder');
         $this->call('PositionSeeder');
+        $this->call('DemandSeeder');
         $this->call('ChildSeeder');
 
         // $this->call(UsersTableSeeder::class);
