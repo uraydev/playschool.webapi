@@ -48,19 +48,18 @@
 <p>Welcome to the generated API reference.
 <a href="http://localhost/docs/collection.json">Get Postman Collection</a></p>
 <!-- END_INFO -->
-<h1>User</h1>
-<!-- START_b2892eb191cd19c0a6f1aae56ba43db4 -->
-<h2>Get all</h2>
-<p>Выводит коллекцию всех пользователей</p>
+<h1>Position</h1>
+<!-- START_b418c6fa34a60daffb35bf6286529927 -->
+<h2>api/v1/position</h2>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X GET "http://localhost/api/v1/user" \
+<pre><code class="language-bash">curl -X GET "http://localhost/api/v1/position" \
 -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">var settings = {
     "async": true,
     "crossDomain": true,
-    "url": "http://localhost/api/v1/user",
+    "url": "http://localhost/api/v1/position",
     "method": "GET",
     "headers": {
         "accept": "application/json"
@@ -76,36 +75,55 @@ $.ajax(settings).done(function (response) {
 <pre><code class="language-json">[
     {
         "_id": 1000,
-        "surname": "Иванов",
-        "name": "Иванов",
-        "partonymic": "Иванович",
-        "age": 30,
-        "gender": 1
+        "name": "teacher",
+        "description": "Воспитатель",
+        "created_at": "2018-08-26 17:26:49",
+        "updated_at": "2018-08-26 17:26:49"
     },
     {
         "_id": 1001,
-        "surname": "Петров",
-        "name": "Петр",
-        "partonymic": "Петрович",
-        "age": 33
+        "name": "doctor",
+        "description": "Медицинский работник",
+        "created_at": "2018-08-26 17:26:49",
+        "updated_at": "2018-08-26 17:26:49"
+    },
+    {
+        "_id": 1002,
+        "name": "supplier",
+        "description": "МТО",
+        "created_at": "2018-08-26 17:26:49",
+        "updated_at": "2018-08-26 17:26:49"
+    },
+    {
+        "_id": 1003,
+        "name": "clerk",
+        "description": "Делопроизводитель",
+        "created_at": "2018-08-26 17:26:49",
+        "updated_at": "2018-08-26 17:26:49"
+    },
+    {
+        "_id": 1004,
+        "name": "administrator",
+        "description": "Управляющий",
+        "created_at": "2018-08-26 17:26:49",
+        "updated_at": "2018-08-26 17:26:49"
     }
 ]</code></pre>
 <h3>HTTP Request</h3>
-<p><code>GET api/v1/user</code></p>
-<p><code>HEAD api/v1/user</code></p>
-<!-- END_b2892eb191cd19c0a6f1aae56ba43db4 -->
-<!-- START_96b8840d06e94c53a87e83e9edfb44eb -->
+<p><code>GET api/v1/position</code></p>
+<p><code>HEAD api/v1/position</code></p>
+<!-- END_b418c6fa34a60daffb35bf6286529927 -->
+<!-- START_5e751c3a3c62c40dd6b382609d1f14ab -->
 <h2>Store</h2>
-<p>Добавляет нового пользователя</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X POST "http://localhost/api/v1/user" \
+<pre><code class="language-bash">curl -X POST "http://localhost/api/v1/position" \
 -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">var settings = {
     "async": true,
     "crossDomain": true,
-    "url": "http://localhost/api/v1/user",
+    "url": "http://localhost/api/v1/position",
     "method": "POST",
     "headers": {
         "accept": "application/json"
@@ -116,20 +134,19 @@ $.ajax(settings).done(function (response) {
     console.log(response);
 });</code></pre>
 <h3>HTTP Request</h3>
-<p><code>POST api/v1/user</code></p>
-<!-- END_96b8840d06e94c53a87e83e9edfb44eb -->
-<!-- START_eda2b3d78b052ccb36bffab3b344d72a -->
-<h2>Get User</h2>
-<p>Выводит пользователей по ID</p>
+<p><code>POST api/v1/position</code></p>
+<!-- END_5e751c3a3c62c40dd6b382609d1f14ab -->
+<!-- START_664ae746449fd4b5cc40811fc91a7eaa -->
+<h2>Get Position</h2>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X GET "http://localhost/api/v1/user/{user}" \
+<pre><code class="language-bash">curl -X GET "http://localhost/api/v1/position/{position}" \
 -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">var settings = {
     "async": true,
     "crossDomain": true,
-    "url": "http://localhost/api/v1/user/{user}",
+    "url": "http://localhost/api/v1/position/{position}",
     "method": "GET",
     "headers": {
         "accept": "application/json"
@@ -144,21 +161,20 @@ $.ajax(settings).done(function (response) {
 </blockquote>
 <pre><code class="language-json">null</code></pre>
 <h3>HTTP Request</h3>
-<p><code>GET api/v1/user/{user}</code></p>
-<p><code>HEAD api/v1/user/{user}</code></p>
-<!-- END_eda2b3d78b052ccb36bffab3b344d72a -->
-<!-- START_1006d782d67bb58039bde349972eb2f0 -->
+<p><code>GET api/v1/position/{position}</code></p>
+<p><code>HEAD api/v1/position/{position}</code></p>
+<!-- END_664ae746449fd4b5cc40811fc91a7eaa -->
+<!-- START_c6432985940405e89aa1de34fbe2bd6a -->
 <h2>Update</h2>
-<p>Обновляет данные о пользователе</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X PUT "http://localhost/api/v1/user/{user}" \
+<pre><code class="language-bash">curl -X PUT "http://localhost/api/v1/position/{position}" \
 -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">var settings = {
     "async": true,
     "crossDomain": true,
-    "url": "http://localhost/api/v1/user/{user}",
+    "url": "http://localhost/api/v1/position/{position}",
     "method": "PUT",
     "headers": {
         "accept": "application/json"
@@ -169,21 +185,20 @@ $.ajax(settings).done(function (response) {
     console.log(response);
 });</code></pre>
 <h3>HTTP Request</h3>
-<p><code>PUT api/v1/user/{user}</code></p>
-<p><code>PATCH api/v1/user/{user}</code></p>
-<!-- END_1006d782d67bb58039bde349972eb2f0 -->
-<!-- START_a5d7655acadc1b6c97d48e68f1e87be9 -->
-<h2>Remove</h2>
-<p>Удаляет пользователя</p>
+<p><code>PUT api/v1/position/{position}</code></p>
+<p><code>PATCH api/v1/position/{position}</code></p>
+<!-- END_c6432985940405e89aa1de34fbe2bd6a -->
+<!-- START_a39af3974557cbe523d138028916a34e -->
+<h2>api/v1/position/{position}</h2>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X DELETE "http://localhost/api/v1/user/{user}" \
+<pre><code class="language-bash">curl -X DELETE "http://localhost/api/v1/position/{position}" \
 -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">var settings = {
     "async": true,
     "crossDomain": true,
-    "url": "http://localhost/api/v1/user/{user}",
+    "url": "http://localhost/api/v1/position/{position}",
     "method": "DELETE",
     "headers": {
         "accept": "application/json"
@@ -194,12 +209,11 @@ $.ajax(settings).done(function (response) {
     console.log(response);
 });</code></pre>
 <h3>HTTP Request</h3>
-<p><code>DELETE api/v1/user/{user}</code></p>
-<!-- END_a5d7655acadc1b6c97d48e68f1e87be9 -->
+<p><code>DELETE api/v1/position/{position}</code></p>
+<!-- END_a39af3974557cbe523d138028916a34e -->
 <h1>UserMeta</h1>
 <!-- START_345b08937ca816f9f362ace2fc097bd9 -->
-<h2>Get all</h2>
-<p>Выводит коллекцию всех метаданных пользователей</p>
+<h2>api/v1/user_meta</h2>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
@@ -223,22 +237,60 @@ $.ajax(settings).done(function (response) {
 </blockquote>
 <pre><code class="language-json">[
     {
-        "_id": "5b805eafce78a229e0003442",
+        "_id": "5b82e2d9ce78a21574002f03",
         "user__id": 1000,
-        "key": "age",
-        "value": 30
+        "key": "phone",
+        "value": "+79222222222",
+        "created_at": "2018-08-26 17:26:49",
+        "updated_at": "2018-08-26 17:26:49"
     },
     {
-        "_id": "5b805eafce78a229e0003443",
+        "_id": "5b82e2d9ce78a21574002f04",
         "user__id": 1000,
-        "key": "gender",
-        "value": 1
+        "key": "dob",
+        "value": "1990-01-01",
+        "created_at": "2018-08-26 17:26:49",
+        "updated_at": "2018-08-26 17:26:49"
     },
     {
-        "_id": "5b805eafce78a229e0003444",
+        "_id": "5b82e2d9ce78a21574002f05",
+        "user__id": 1000,
+        "key": "number",
+        "value": "100",
+        "created_at": "2018-08-26 17:26:49",
+        "updated_at": "2018-08-26 17:26:49"
+    },
+    {
+        "_id": "5b82e2d9ce78a21574002f06",
         "user__id": 1001,
-        "key": "age",
-        "value": 33
+        "key": "email",
+        "value": "qwe@qwe.ru",
+        "created_at": "2018-08-26 17:26:49",
+        "updated_at": "2018-08-26 17:26:49"
+    },
+    {
+        "_id": "5b82e2d9ce78a21574002f07",
+        "user__id": 1001,
+        "key": "phone",
+        "value": "+7933333333",
+        "created_at": "2018-08-26 17:26:49",
+        "updated_at": "2018-08-26 17:26:49"
+    },
+    {
+        "_id": "5b82e2d9ce78a21574002f08",
+        "user__id": 1001,
+        "key": "dob",
+        "value": "1970-06-01",
+        "created_at": "2018-08-26 17:26:49",
+        "updated_at": "2018-08-26 17:26:49"
+    },
+    {
+        "_id": "5b82e2d9ce78a21574002f09",
+        "user__id": 1001,
+        "key": "number",
+        "value": "101",
+        "created_at": "2018-08-26 17:26:49",
+        "updated_at": "2018-08-26 17:26:49"
     }
 ]</code></pre>
 <h3>HTTP Request</h3>
@@ -252,12 +304,21 @@ $.ajax(settings).done(function (response) {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST "http://localhost/api/v1/user_meta" \
--H "Accept: application/json"</code></pre>
+-H "Accept: application/json" \
+    -d "user__id"="perspiciatis" \
+    -d "key"="perspiciatis" \
+    -d "value"="perspiciatis" \
+</code></pre>
 <pre><code class="language-javascript">var settings = {
     "async": true,
     "crossDomain": true,
     "url": "http://localhost/api/v1/user_meta",
     "method": "POST",
+    "data": {
+        "user__id": "perspiciatis",
+        "key": "perspiciatis",
+        "value": "perspiciatis"
+},
     "headers": {
         "accept": "application/json"
     }
@@ -268,6 +329,34 @@ $.ajax(settings).done(function (response) {
 });</code></pre>
 <h3>HTTP Request</h3>
 <p><code>POST api/v1/user_meta</code></p>
+<h4>Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user__id</td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td>key</td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>required</td>
+</tr>
+</tbody>
+</table>
 <!-- END_c488e976664f3572d3939cde6e5dcf69 -->
 <!-- START_ffb286359db7489da5a60dec14cc2fda -->
 <h2>Get UserMeta</h2>
@@ -305,12 +394,21 @@ $.ajax(settings).done(function (response) {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT "http://localhost/api/v1/user_meta/{user_metum}" \
--H "Accept: application/json"</code></pre>
+-H "Accept: application/json" \
+    -d "user__id"="quis" \
+    -d "key"="quis" \
+    -d "value"="quis" \
+</code></pre>
 <pre><code class="language-javascript">var settings = {
     "async": true,
     "crossDomain": true,
     "url": "http://localhost/api/v1/user_meta/{user_metum}",
     "method": "PUT",
+    "data": {
+        "user__id": "quis",
+        "key": "quis",
+        "value": "quis"
+},
     "headers": {
         "accept": "application/json"
     }
@@ -322,10 +420,37 @@ $.ajax(settings).done(function (response) {
 <h3>HTTP Request</h3>
 <p><code>PUT api/v1/user_meta/{user_metum}</code></p>
 <p><code>PATCH api/v1/user_meta/{user_metum}</code></p>
+<h4>Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user__id</td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td>key</td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>required</td>
+</tr>
+</tbody>
+</table>
 <!-- END_8a153808e32b539395220b7d0f7150c0 -->
 <!-- START_4afc465adfe24bfe6acd4e4cbbcb0b20 -->
-<h2>Remove</h2>
-<p>Удаляет метаданные пользователя</p>
+<h2>api/v1/user_meta/{user_metum}</h2>
 <blockquote>
 <p>Example request:</p>
 </blockquote>

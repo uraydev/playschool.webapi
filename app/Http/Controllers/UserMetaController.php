@@ -76,24 +76,24 @@ class UserMetaController extends _BaseApiController
         }
     }
 
-    /**
-     * Remove
-     * 
-     * Удаляет метаданные пользователя
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        try {
-            $find = $this->contextService->find_object_by_id($id);
-            if (!isset($find)) return response()->json('Удаляемый объект не найден', 400, $this->header, JSON_UNESCAPED_UNICODE);
-            if (!$this->contextService->remove_object($id)) return response()->json('Ошибка удаления объекта', 400, $this->header, JSON_UNESCAPED_UNICODE);
-            return response()->json(true, 200, $this->header, JSON_UNESCAPED_UNICODE);
-        } catch(Exception $e)
-        {
-            return response()->json($e->getMessage(), 500, $this->header, JSON_UNESCAPED_UNICODE);
-        }
-    }
+//    /**
+//     * Remove
+//     *
+//     * Удаляет метаданные пользователя
+//     *
+//     * @param  int  $id
+//     * @return \Illuminate\Http\Response
+//     */
+//    public function destroy($id)
+//    {
+//        try {
+//            $find = $this->contextService->find_object_by_id($id);
+//            if (!isset($find)) return response()->json('Удаляемый объект не найден', 400, $this->header, JSON_UNESCAPED_UNICODE);
+//            if (!$this->contextService->remove_object($id)) return response()->json('Ошибка удаления объекта', 400, $this->header, JSON_UNESCAPED_UNICODE);
+//            return response()->json(true, 200, $this->header, JSON_UNESCAPED_UNICODE);
+//        } catch(Exception $e)
+//        {
+//            return response()->json($e->getMessage(), 500, $this->header, JSON_UNESCAPED_UNICODE);
+//        }
+//    }
 }

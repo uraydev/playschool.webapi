@@ -23,7 +23,7 @@ Route::group(array('prefix' => 'v1', 'middleware' => []), function () {
   // Route::post('user', ['as' => 'user.store', 'uses' => 'UserController@store']);
   // Route::put('user/{id}', ['as' => 'user.update', 'uses' => 'UserController@update']);
   
-  Route::apiResource('user','UserController');
+//  Route::apiResource('user','UserController');
   Route::apiResource('user_meta','UserMetaController');
   Route::apiResource('position','PositionController');
 

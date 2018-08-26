@@ -13,22 +13,21 @@ toc_footers:
 - <a href='http://github.com/mpociot/documentarian'>Documentation Powered by Documentarian</a>
 ---
 <!-- START_INFO -->
+
 # Info
 
 Welcome to the generated API reference.
 [Get Postman Collection](http://localhost/docs/collection.json)
 <!-- END_INFO -->
 
-#User
-<!-- START_b2892eb191cd19c0a6f1aae56ba43db4 -->
-## Get all
-
-Выводит коллекцию всех пользователей
+#Position
+<!-- START_b418c6fa34a60daffb35bf6286529927 -->
+## api/v1/position
 
 > Example request:
 
 ```bash
-curl -X GET "http://localhost/api/v1/user" \
+curl -X GET "http://localhost/api/v1/position" \
 -H "Accept: application/json"
 ```
 
@@ -36,7 +35,7 @@ curl -X GET "http://localhost/api/v1/user" \
 var settings = {
     "async": true,
     "crossDomain": true,
-    "url": "http://localhost/api/v1/user",
+    "url": "http://localhost/api/v1/position",
     "method": "GET",
     "headers": {
         "accept": "application/json"
@@ -54,39 +53,57 @@ $.ajax(settings).done(function (response) {
 [
     {
         "_id": 1000,
-        "surname": "Иванов",
-        "name": "Иванов",
-        "partonymic": "Иванович",
-        "age": 30,
-        "gender": 1
+        "name": "teacher",
+        "description": "Воспитатель",
+        "created_at": "2018-08-26 17:26:49",
+        "updated_at": "2018-08-26 17:26:49"
     },
     {
         "_id": 1001,
-        "surname": "Петров",
-        "name": "Петр",
-        "partonymic": "Петрович",
-        "age": 33
+        "name": "doctor",
+        "description": "Медицинский работник",
+        "created_at": "2018-08-26 17:26:49",
+        "updated_at": "2018-08-26 17:26:49"
+    },
+    {
+        "_id": 1002,
+        "name": "supplier",
+        "description": "МТО",
+        "created_at": "2018-08-26 17:26:49",
+        "updated_at": "2018-08-26 17:26:49"
+    },
+    {
+        "_id": 1003,
+        "name": "clerk",
+        "description": "Делопроизводитель",
+        "created_at": "2018-08-26 17:26:49",
+        "updated_at": "2018-08-26 17:26:49"
+    },
+    {
+        "_id": 1004,
+        "name": "administrator",
+        "description": "Управляющий",
+        "created_at": "2018-08-26 17:26:49",
+        "updated_at": "2018-08-26 17:26:49"
     }
 ]
 ```
 
 ### HTTP Request
-`GET api/v1/user`
+`GET api/v1/position`
 
-`HEAD api/v1/user`
+`HEAD api/v1/position`
 
 
-<!-- END_b2892eb191cd19c0a6f1aae56ba43db4 -->
+<!-- END_b418c6fa34a60daffb35bf6286529927 -->
 
-<!-- START_96b8840d06e94c53a87e83e9edfb44eb -->
+<!-- START_5e751c3a3c62c40dd6b382609d1f14ab -->
 ## Store
-
-Добавляет нового пользователя
 
 > Example request:
 
 ```bash
-curl -X POST "http://localhost/api/v1/user" \
+curl -X POST "http://localhost/api/v1/position" \
 -H "Accept: application/json"
 ```
 
@@ -94,7 +111,7 @@ curl -X POST "http://localhost/api/v1/user" \
 var settings = {
     "async": true,
     "crossDomain": true,
-    "url": "http://localhost/api/v1/user",
+    "url": "http://localhost/api/v1/position",
     "method": "POST",
     "headers": {
         "accept": "application/json"
@@ -108,20 +125,18 @@ $.ajax(settings).done(function (response) {
 
 
 ### HTTP Request
-`POST api/v1/user`
+`POST api/v1/position`
 
 
-<!-- END_96b8840d06e94c53a87e83e9edfb44eb -->
+<!-- END_5e751c3a3c62c40dd6b382609d1f14ab -->
 
-<!-- START_eda2b3d78b052ccb36bffab3b344d72a -->
-## Get User
-
-Выводит пользователей по ID
+<!-- START_664ae746449fd4b5cc40811fc91a7eaa -->
+## Get Position
 
 > Example request:
 
 ```bash
-curl -X GET "http://localhost/api/v1/user/{user}" \
+curl -X GET "http://localhost/api/v1/position/{position}" \
 -H "Accept: application/json"
 ```
 
@@ -129,7 +144,7 @@ curl -X GET "http://localhost/api/v1/user/{user}" \
 var settings = {
     "async": true,
     "crossDomain": true,
-    "url": "http://localhost/api/v1/user/{user}",
+    "url": "http://localhost/api/v1/position/{position}",
     "method": "GET",
     "headers": {
         "accept": "application/json"
@@ -148,22 +163,20 @@ null
 ```
 
 ### HTTP Request
-`GET api/v1/user/{user}`
+`GET api/v1/position/{position}`
 
-`HEAD api/v1/user/{user}`
+`HEAD api/v1/position/{position}`
 
 
-<!-- END_eda2b3d78b052ccb36bffab3b344d72a -->
+<!-- END_664ae746449fd4b5cc40811fc91a7eaa -->
 
-<!-- START_1006d782d67bb58039bde349972eb2f0 -->
+<!-- START_c6432985940405e89aa1de34fbe2bd6a -->
 ## Update
-
-Обновляет данные о пользователе
 
 > Example request:
 
 ```bash
-curl -X PUT "http://localhost/api/v1/user/{user}" \
+curl -X PUT "http://localhost/api/v1/position/{position}" \
 -H "Accept: application/json"
 ```
 
@@ -171,7 +184,7 @@ curl -X PUT "http://localhost/api/v1/user/{user}" \
 var settings = {
     "async": true,
     "crossDomain": true,
-    "url": "http://localhost/api/v1/user/{user}",
+    "url": "http://localhost/api/v1/position/{position}",
     "method": "PUT",
     "headers": {
         "accept": "application/json"
@@ -185,22 +198,20 @@ $.ajax(settings).done(function (response) {
 
 
 ### HTTP Request
-`PUT api/v1/user/{user}`
+`PUT api/v1/position/{position}`
 
-`PATCH api/v1/user/{user}`
+`PATCH api/v1/position/{position}`
 
 
-<!-- END_1006d782d67bb58039bde349972eb2f0 -->
+<!-- END_c6432985940405e89aa1de34fbe2bd6a -->
 
-<!-- START_a5d7655acadc1b6c97d48e68f1e87be9 -->
-## Remove
-
-Удаляет пользователя
+<!-- START_a39af3974557cbe523d138028916a34e -->
+## api/v1/position/{position}
 
 > Example request:
 
 ```bash
-curl -X DELETE "http://localhost/api/v1/user/{user}" \
+curl -X DELETE "http://localhost/api/v1/position/{position}" \
 -H "Accept: application/json"
 ```
 
@@ -208,7 +219,7 @@ curl -X DELETE "http://localhost/api/v1/user/{user}" \
 var settings = {
     "async": true,
     "crossDomain": true,
-    "url": "http://localhost/api/v1/user/{user}",
+    "url": "http://localhost/api/v1/position/{position}",
     "method": "DELETE",
     "headers": {
         "accept": "application/json"
@@ -222,16 +233,14 @@ $.ajax(settings).done(function (response) {
 
 
 ### HTTP Request
-`DELETE api/v1/user/{user}`
+`DELETE api/v1/position/{position}`
 
 
-<!-- END_a5d7655acadc1b6c97d48e68f1e87be9 -->
+<!-- END_a39af3974557cbe523d138028916a34e -->
 
 #UserMeta
 <!-- START_345b08937ca816f9f362ace2fc097bd9 -->
-## Get all
-
-Выводит коллекцию всех метаданных пользователей
+## api/v1/user_meta
 
 > Example request:
 
@@ -261,22 +270,60 @@ $.ajax(settings).done(function (response) {
 ```json
 [
     {
-        "_id": "5b805eafce78a229e0003442",
+        "_id": "5b82e2d9ce78a21574002f03",
         "user__id": 1000,
-        "key": "age",
-        "value": 30
+        "key": "phone",
+        "value": "+79222222222",
+        "created_at": "2018-08-26 17:26:49",
+        "updated_at": "2018-08-26 17:26:49"
     },
     {
-        "_id": "5b805eafce78a229e0003443",
+        "_id": "5b82e2d9ce78a21574002f04",
         "user__id": 1000,
-        "key": "gender",
-        "value": 1
+        "key": "dob",
+        "value": "1990-01-01",
+        "created_at": "2018-08-26 17:26:49",
+        "updated_at": "2018-08-26 17:26:49"
     },
     {
-        "_id": "5b805eafce78a229e0003444",
+        "_id": "5b82e2d9ce78a21574002f05",
+        "user__id": 1000,
+        "key": "number",
+        "value": "100",
+        "created_at": "2018-08-26 17:26:49",
+        "updated_at": "2018-08-26 17:26:49"
+    },
+    {
+        "_id": "5b82e2d9ce78a21574002f06",
         "user__id": 1001,
-        "key": "age",
-        "value": 33
+        "key": "email",
+        "value": "qwe@qwe.ru",
+        "created_at": "2018-08-26 17:26:49",
+        "updated_at": "2018-08-26 17:26:49"
+    },
+    {
+        "_id": "5b82e2d9ce78a21574002f07",
+        "user__id": 1001,
+        "key": "phone",
+        "value": "+7933333333",
+        "created_at": "2018-08-26 17:26:49",
+        "updated_at": "2018-08-26 17:26:49"
+    },
+    {
+        "_id": "5b82e2d9ce78a21574002f08",
+        "user__id": 1001,
+        "key": "dob",
+        "value": "1970-06-01",
+        "created_at": "2018-08-26 17:26:49",
+        "updated_at": "2018-08-26 17:26:49"
+    },
+    {
+        "_id": "5b82e2d9ce78a21574002f09",
+        "user__id": 1001,
+        "key": "number",
+        "value": "101",
+        "created_at": "2018-08-26 17:26:49",
+        "updated_at": "2018-08-26 17:26:49"
     }
 ]
 ```
@@ -298,7 +345,11 @@ $.ajax(settings).done(function (response) {
 
 ```bash
 curl -X POST "http://localhost/api/v1/user_meta" \
--H "Accept: application/json"
+-H "Accept: application/json" \
+    -d "user__id"="perspiciatis" \
+    -d "key"="perspiciatis" \
+    -d "value"="perspiciatis" \
+
 ```
 
 ```javascript
@@ -307,6 +358,11 @@ var settings = {
     "crossDomain": true,
     "url": "http://localhost/api/v1/user_meta",
     "method": "POST",
+    "data": {
+        "user__id": "perspiciatis",
+        "key": "perspiciatis",
+        "value": "perspiciatis"
+},
     "headers": {
         "accept": "application/json"
     }
@@ -321,6 +377,13 @@ $.ajax(settings).done(function (response) {
 ### HTTP Request
 `POST api/v1/user_meta`
 
+#### Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    user__id | string |  required  | 
+    key | string |  required  | 
+    value | string |  required  | 
 
 <!-- END_c488e976664f3572d3939cde6e5dcf69 -->
 
@@ -375,7 +438,11 @@ null
 
 ```bash
 curl -X PUT "http://localhost/api/v1/user_meta/{user_metum}" \
--H "Accept: application/json"
+-H "Accept: application/json" \
+    -d "user__id"="quis" \
+    -d "key"="quis" \
+    -d "value"="quis" \
+
 ```
 
 ```javascript
@@ -384,6 +451,11 @@ var settings = {
     "crossDomain": true,
     "url": "http://localhost/api/v1/user_meta/{user_metum}",
     "method": "PUT",
+    "data": {
+        "user__id": "quis",
+        "key": "quis",
+        "value": "quis"
+},
     "headers": {
         "accept": "application/json"
     }
@@ -400,13 +472,18 @@ $.ajax(settings).done(function (response) {
 
 `PATCH api/v1/user_meta/{user_metum}`
 
+#### Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    user__id | string |  required  | 
+    key | string |  required  | 
+    value | string |  required  | 
 
 <!-- END_8a153808e32b539395220b7d0f7150c0 -->
 
 <!-- START_4afc465adfe24bfe6acd4e4cbbcb0b20 -->
-## Remove
-
-Удаляет метаданные пользователя
+## api/v1/user_meta/{user_metum}
 
 > Example request:
 
