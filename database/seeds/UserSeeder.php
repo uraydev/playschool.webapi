@@ -20,6 +20,10 @@ class UserSeeder extends Seeder
                 'surname' => 'Иванов', 
                 'name' => 'Иванов', 
                 'partonymic' => 'Иванович',
+                'email' => 'test1@test.ru',
+                'is_verified' => 0,
+                'remember_token' => null,
+                'confirm_token' => null,
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ]
         );
@@ -29,6 +33,10 @@ class UserSeeder extends Seeder
                 'surname' => 'Петров', 
                 'name' => 'Петр', 
                 'partonymic' => 'Петрович',
+                'email' => 'test2@test.ru',
+                'is_verified' => 0,
+                'remember_token' => null,
+                'confirm_token' => null,
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ]
         );

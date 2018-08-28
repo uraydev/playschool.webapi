@@ -22,8 +22,13 @@ Route::group(array('prefix' => 'v1', 'middleware' => []), function () {
   // Route::get('user/{id}', ['as' => 'user.show', 'uses' => 'UserController@show']);
   // Route::post('user', ['as' => 'user.store', 'uses' => 'UserController@store']);
   // Route::put('user/{id}', ['as' => 'user.update', 'uses' => 'UserController@update']);
-  
-//  Route::apiResource('user','UserController');
+
+  Route::post('register', 'AuthController@register');
+  Route::post('login', 'AuthController@login');
+  Route::post('recover', 'AuthController@recover');
+
+
+  Route::apiResource('user','UserController');
   Route::apiResource('user_meta','UserMetaController');
   Route::apiResource('position','PositionController');
   Route::apiResource('demand','DemandController');
@@ -33,5 +38,16 @@ Route::group(array('prefix' => 'v1', 'middleware' => []), function () {
   // Route::resource('user_meta','UserMetaController');
 });
 
+
+
+Route::group(array('prefix' => 'v1', 'middleware' => ['jwt.auth']), function() {
+  Route::get('logout', 'AuthController@logout');
+  Route::post('test', function(){
+    return response()->json(['foo'=>'bar']);
+  });
+  Route::get('test', function(){
+    return response()->json(['foo1'=>'bar1']);
+  });
+});
 
 
