@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\Source\DAL\Interfaces\ICrud;
 use Mockery\CountValidator\Exception;
 
+/**
+ * Class _BaseApiController
+ * @package App\Http\Controllers
+ */
 class _BaseApiController extends Controller
 {
     protected $contextService;
@@ -17,9 +21,7 @@ class _BaseApiController extends Controller
 
     /**
      * Get all
-     *
-     * Âûâîäèò êîëëåêöèþ âñåõ îáúåêòîâ
-     *
+     * Ð’Ñ‹Ð²Ð¾Ð´Ð¸Ñ‚ ÐºÐ¾Ð»Ð»ÐµÐºÑ†Ð¸ÑŽ Ð²ÑÐµÑ… Ð¾Ð±ÑŠÐµÐºÑ‚Ð¾Ð²
      * @return \Illuminate\Http\Response
      */
     protected function index()
@@ -29,7 +31,7 @@ class _BaseApiController extends Controller
     }
 
 //    /**
-//     * Âûâîäèò ñòðàíèöó äëÿ ñîçäàíèÿ îáúåêòà
+//     * Ð’Ñ‹Ð²Ð¾Ð´Ð¸Ñ‚ ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ†Ñƒ Ð´Ð»Ñ ÑÐ¾Ð·Ð´Ð°Ð½Ð¸Ñ Ð¾Ð±ÑŠÐµÐºÑ‚Ð°
 //     *
 //     * @param Request $request
 //     * @return \Illuminate\Http\Response
@@ -42,7 +44,7 @@ class _BaseApiController extends Controller
 
 
 //    /**
-//     * Óäàëÿåò îáúåêò
+//     * Ð£Ð´Ð°Ð»ÑÐµÑ‚ Ð¾Ð±ÑŠÐµÐºÑ‚
 //     *
 //     * @param  int $id
 //     * @return \Illuminate\Http\Response
@@ -55,9 +57,7 @@ class _BaseApiController extends Controller
 
     /**
      * Remove
-     *
-     * Óäàëÿåò ìåòàäàííûå ïîëüçîâàòåëÿ
-     *
+     * Ð£Ð´Ð°Ð»ÑÐµÑ‚ Ð¾Ð±ÑŠÐµÐºÑ‚
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
@@ -65,8 +65,8 @@ class _BaseApiController extends Controller
     {
         try {
             $find = $this->contextService->find_object_by_id($id);
-            if (!isset($find)) return response()->json('Óäàëÿåìûé îáúåêò íå íàéäåí', 400, $this->header, JSON_UNESCAPED_UNICODE);
-            if (!$this->contextService->remove_object($id)) return response()->json('Îøèáêà óäàëåíèÿ îáúåêòà', 400, $this->header, JSON_UNESCAPED_UNICODE);
+            if (!isset($find)) return response()->json('Ð£Ð´Ð°Ð»ÑÐµÐ¼Ñ‹Ð¹ Ð¾Ð±ÑŠÐµÐºÑ‚ Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½', 400, $this->header, JSON_UNESCAPED_UNICODE);
+            if (!$this->contextService->remove_object($id)) return response()->json('ÐžÑˆÐ¸Ð±ÐºÐ° ÑƒÐ´Ð°Ð»ÐµÐ½Ð¸Ñ Ð¾Ð±ÑŠÐµÐºÑ‚Ð°', 400, $this->header, JSON_UNESCAPED_UNICODE);
             return response()->json(true, 200, $this->header, JSON_UNESCAPED_UNICODE);
         } catch (Exception $e) {
             return response()->json($e->getMessage(), 500, $this->header, JSON_UNESCAPED_UNICODE);

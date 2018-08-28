@@ -22,7 +22,8 @@ Welcome to the generated API reference.
 
 #Demand
 <!-- START_db687e08bedb8e09e996c420294838b4 -->
-## api/v1/demand
+## Get all
+Выводит коллекцию всех объектов
 
 > Example request:
 
@@ -189,7 +190,8 @@ $.ajax(settings).done(function (response) {
 <!-- END_135ede75efee494e42c42a1a6eb6baab -->
 
 <!-- START_5b44f871c08ba31012f6637e4c83ef11 -->
-## api/v1/demand/{demand}
+## Remove
+Удаляет объект
 
 > Example request:
 
@@ -223,7 +225,8 @@ $.ajax(settings).done(function (response) {
 
 #Position
 <!-- START_b418c6fa34a60daffb35bf6286529927 -->
-## api/v1/position
+## Get all
+Выводит коллекцию всех объектов
 
 > Example request:
 
@@ -407,7 +410,8 @@ $.ajax(settings).done(function (response) {
 <!-- END_c6432985940405e89aa1de34fbe2bd6a -->
 
 <!-- START_a39af3974557cbe523d138028916a34e -->
-## api/v1/position/{position}
+## Remove
+Удаляет объект
 
 > Example request:
 
@@ -441,7 +445,8 @@ $.ajax(settings).done(function (response) {
 
 #UserMeta
 <!-- START_345b08937ca816f9f362ace2fc097bd9 -->
-## api/v1/user_meta
+## Get all
+Выводит коллекцию всех объектов
 
 > Example request:
 
@@ -692,7 +697,8 @@ Parameter | Type | Status | Description
 <!-- END_8a153808e32b539395220b7d0f7150c0 -->
 
 <!-- START_4afc465adfe24bfe6acd4e4cbbcb0b20 -->
-## api/v1/user_meta/{user_metum}
+## Remove
+Удаляет объект
 
 > Example request:
 
