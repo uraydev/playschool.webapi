@@ -20,6 +20,157 @@ Welcome to the generated API reference.
 [Get Postman Collection](http://localhost/docs/collection.json)
 <!-- END_INFO -->
 
+#Auth
+JWT Auth
+<!-- START_8ae5d428da27b2b014dc767c2f19a813 -->
+## API Register
+
+> Example request:
+
+```bash
+curl -X POST "http://localhost/api/v1/register" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/api/v1/register",
+    "method": "POST",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+
+### HTTP Request
+`POST api/v1/register`
+
+
+<!-- END_8ae5d428da27b2b014dc767c2f19a813 -->
+
+<!-- START_8c0e48cd8efa861b308fc45872ff0837 -->
+## API Login, on success return JWT Auth token
+
+> Example request:
+
+```bash
+curl -X POST "http://localhost/api/v1/login" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/api/v1/login",
+    "method": "POST",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+
+### HTTP Request
+`POST api/v1/login`
+
+
+<!-- END_8c0e48cd8efa861b308fc45872ff0837 -->
+
+<!-- START_df9c3d718fac52eccd59f87bc891746f -->
+## API Recover Password
+
+Метод sendResetLink в процессе разработки
+
+> Example request:
+
+```bash
+curl -X POST "http://localhost/api/v1/recover" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/api/v1/recover",
+    "method": "POST",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+
+### HTTP Request
+`POST api/v1/recover`
+
+
+<!-- END_df9c3d718fac52eccd59f87bc891746f -->
+
+<!-- START_394d402f1e299237fa88b4466e18226b -->
+## Log out
+Invalidate the token, so user cannot use it anymore
+They have to relogin to get a new token
+
+> Example request:
+
+```bash
+curl -X GET "http://localhost/api/v1/logout" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/api/v1/logout",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+> Example response:
+
+```json
+{
+    "success": false,
+    "error": {
+        "code": 0,
+        "message": "Token not provided"
+    }
+}
+```
+
+### HTTP Request
+`GET api/v1/logout`
+
+`HEAD api/v1/logout`
+
+
+<!-- END_394d402f1e299237fa88b4466e18226b -->
+
 #Demand
 <!-- START_db687e08bedb8e09e996c420294838b4 -->
 ## Get all
@@ -53,22 +204,22 @@ $.ajax(settings).done(function (response) {
 ```json
 [
     {
-        "_id": "5b82f070ce78a208280038fa",
+        "_id": "5b85906fce78a22bb4007ac8",
         "name": "Demand Name 1",
         "description": "Demand description 1",
         "author_id": 1000,
         "responsible_id": 1000,
-        "created_at": "2018-08-26 18:24:48",
-        "updated_at": "2018-08-26 18:24:48"
+        "created_at": "2018-08-28 18:11:59",
+        "updated_at": "2018-08-28 18:11:59"
     },
     {
-        "_id": "5b82f070ce78a208280038fb",
+        "_id": "5b85906fce78a22bb4007ac9",
         "name": "Demand Name 2",
         "description": "Demand description 2",
         "author_id": 1000,
         "responsible_id": 1001,
-        "created_at": "2018-08-26 18:24:48",
-        "updated_at": "2018-08-26 18:24:48"
+        "created_at": "2018-08-28 18:11:59",
+        "updated_at": "2018-08-28 18:11:59"
     }
 ]
 ```
@@ -259,36 +410,36 @@ $.ajax(settings).done(function (response) {
         "_id": 1000,
         "name": "teacher",
         "description": "Воспитатель",
-        "created_at": "2018-08-26 18:24:48",
-        "updated_at": "2018-08-26 18:24:48"
+        "created_at": "2018-08-28 18:11:59",
+        "updated_at": "2018-08-28 18:11:59"
     },
     {
         "_id": 1001,
         "name": "doctor",
         "description": "Медицинский работник",
-        "created_at": "2018-08-26 18:24:48",
-        "updated_at": "2018-08-26 18:24:48"
+        "created_at": "2018-08-28 18:11:59",
+        "updated_at": "2018-08-28 18:11:59"
     },
     {
         "_id": 1002,
         "name": "supplier",
         "description": "МТО",
-        "created_at": "2018-08-26 18:24:48",
-        "updated_at": "2018-08-26 18:24:48"
+        "created_at": "2018-08-28 18:11:59",
+        "updated_at": "2018-08-28 18:11:59"
     },
     {
         "_id": 1003,
         "name": "clerk",
         "description": "Делопроизводитель",
-        "created_at": "2018-08-26 18:24:48",
-        "updated_at": "2018-08-26 18:24:48"
+        "created_at": "2018-08-28 18:11:59",
+        "updated_at": "2018-08-28 18:11:59"
     },
     {
         "_id": 1004,
         "name": "administrator",
         "description": "Управляющий",
-        "created_at": "2018-08-26 18:24:48",
-        "updated_at": "2018-08-26 18:24:48"
+        "created_at": "2018-08-28 18:11:59",
+        "updated_at": "2018-08-28 18:11:59"
     }
 ]
 ```
@@ -443,6 +594,237 @@ $.ajax(settings).done(function (response) {
 
 <!-- END_a39af3974557cbe523d138028916a34e -->
 
+#User
+<!-- START_b2892eb191cd19c0a6f1aae56ba43db4 -->
+## Get all
+Выводит коллекцию всех объектов
+
+> Example request:
+
+```bash
+curl -X GET "http://localhost/api/v1/user" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/api/v1/user",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+> Example response:
+
+```json
+[
+    {
+        "_id": 1000,
+        "surname": "Иванов",
+        "name": "Иванов",
+        "partonymic": "Иванович",
+        "email": "test1@test.ru",
+        "is_verified": 0,
+        "remember_token": null,
+        "confirm_token": null,
+        "created_at": "2018-08-28 18:11:59",
+        "updated_at": "2018-08-28 18:11:59",
+        "phone": "+79222222222",
+        "dob": "1990-01-01",
+        "number": "100"
+    },
+    {
+        "_id": 1001,
+        "surname": "Петров",
+        "name": "Петр",
+        "partonymic": "Петрович",
+        "email": "test2@test.ru",
+        "is_verified": 0,
+        "remember_token": null,
+        "confirm_token": null,
+        "created_at": "2018-08-28 18:11:59",
+        "updated_at": "2018-08-28 18:11:59",
+        "phone": "+7933333333",
+        "dob": "1970-06-01",
+        "number": "101"
+    },
+    {
+        "_id": "5b85908cce78a22db8002759",
+        "name": "zamir",
+        "email": "jusupovz@gmail.com",
+        "password": "$2y$10$aIHUKaQJjuWcCA3NBa3yl..kcerNBq1iQgvdiyJ.V8h3s2rpH9jp.",
+        "updated_at": "2018-08-28 18:12:37",
+        "created_at": "2018-08-28 18:12:28",
+        "is_verified": 1
+    }
+]
+```
+
+### HTTP Request
+`GET api/v1/user`
+
+`HEAD api/v1/user`
+
+
+<!-- END_b2892eb191cd19c0a6f1aae56ba43db4 -->
+
+<!-- START_96b8840d06e94c53a87e83e9edfb44eb -->
+## Store
+
+Добавляет нового пользователя
+
+> Example request:
+
+```bash
+curl -X POST "http://localhost/api/v1/user" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/api/v1/user",
+    "method": "POST",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+
+### HTTP Request
+`POST api/v1/user`
+
+
+<!-- END_96b8840d06e94c53a87e83e9edfb44eb -->
+
+<!-- START_eda2b3d78b052ccb36bffab3b344d72a -->
+## Get User
+
+Выводит пользователей по ID
+
+> Example request:
+
+```bash
+curl -X GET "http://localhost/api/v1/user/{user}" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/api/v1/user/{user}",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+> Example response:
+
+```json
+null
+```
+
+### HTTP Request
+`GET api/v1/user/{user}`
+
+`HEAD api/v1/user/{user}`
+
+
+<!-- END_eda2b3d78b052ccb36bffab3b344d72a -->
+
+<!-- START_1006d782d67bb58039bde349972eb2f0 -->
+## Update
+
+Обновляет данные о пользователе
+
+> Example request:
+
+```bash
+curl -X PUT "http://localhost/api/v1/user/{user}" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/api/v1/user/{user}",
+    "method": "PUT",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+
+### HTTP Request
+`PUT api/v1/user/{user}`
+
+`PATCH api/v1/user/{user}`
+
+
+<!-- END_1006d782d67bb58039bde349972eb2f0 -->
+
+<!-- START_a5d7655acadc1b6c97d48e68f1e87be9 -->
+## Remove
+
+Удаляет пользователя
+
+> Example request:
+
+```bash
+curl -X DELETE "http://localhost/api/v1/user/{user}" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/api/v1/user/{user}",
+    "method": "DELETE",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+
+### HTTP Request
+`DELETE api/v1/user/{user}`
+
+
+<!-- END_a5d7655acadc1b6c97d48e68f1e87be9 -->
+
 #UserMeta
 <!-- START_345b08937ca816f9f362ace2fc097bd9 -->
 ## Get all
@@ -476,68 +858,52 @@ $.ajax(settings).done(function (response) {
 ```json
 [
     {
-        "_id": "5b82f070ce78a208280038f2",
-        "user__id": 1000,
-        "key": "email",
-        "value": "test@test.ru",
-        "created_at": "2018-08-26 18:24:48",
-        "updated_at": "2018-08-26 18:24:48"
-    },
-    {
-        "_id": "5b82f070ce78a208280038f3",
+        "_id": "5b85906fce78a22bb4007ac2",
         "user__id": 1000,
         "key": "phone",
         "value": "+79222222222",
-        "created_at": "2018-08-26 18:24:48",
-        "updated_at": "2018-08-26 18:24:48"
+        "created_at": "2018-08-28 18:11:59",
+        "updated_at": "2018-08-28 18:11:59"
     },
     {
-        "_id": "5b82f070ce78a208280038f4",
+        "_id": "5b85906fce78a22bb4007ac3",
         "user__id": 1000,
         "key": "dob",
         "value": "1990-01-01",
-        "created_at": "2018-08-26 18:24:48",
-        "updated_at": "2018-08-26 18:24:48"
+        "created_at": "2018-08-28 18:11:59",
+        "updated_at": "2018-08-28 18:11:59"
     },
     {
-        "_id": "5b82f070ce78a208280038f5",
+        "_id": "5b85906fce78a22bb4007ac4",
         "user__id": 1000,
         "key": "number",
         "value": "100",
-        "created_at": "2018-08-26 18:24:48",
-        "updated_at": "2018-08-26 18:24:48"
+        "created_at": "2018-08-28 18:11:59",
+        "updated_at": "2018-08-28 18:11:59"
     },
     {
-        "_id": "5b82f070ce78a208280038f6",
-        "user__id": 1001,
-        "key": "email",
-        "value": "qwe@qwe.ru",
-        "created_at": "2018-08-26 18:24:48",
-        "updated_at": "2018-08-26 18:24:48"
-    },
-    {
-        "_id": "5b82f070ce78a208280038f7",
+        "_id": "5b85906fce78a22bb4007ac5",
         "user__id": 1001,
         "key": "phone",
         "value": "+7933333333",
-        "created_at": "2018-08-26 18:24:48",
-        "updated_at": "2018-08-26 18:24:48"
+        "created_at": "2018-08-28 18:11:59",
+        "updated_at": "2018-08-28 18:11:59"
     },
     {
-        "_id": "5b82f070ce78a208280038f8",
+        "_id": "5b85906fce78a22bb4007ac6",
         "user__id": 1001,
         "key": "dob",
         "value": "1970-06-01",
-        "created_at": "2018-08-26 18:24:48",
-        "updated_at": "2018-08-26 18:24:48"
+        "created_at": "2018-08-28 18:11:59",
+        "updated_at": "2018-08-28 18:11:59"
     },
     {
-        "_id": "5b82f070ce78a208280038f9",
+        "_id": "5b85906fce78a22bb4007ac7",
         "user__id": 1001,
         "key": "number",
         "value": "101",
-        "created_at": "2018-08-26 18:24:48",
-        "updated_at": "2018-08-26 18:24:48"
+        "created_at": "2018-08-28 18:11:59",
+        "updated_at": "2018-08-28 18:11:59"
     }
 ]
 ```

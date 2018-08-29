@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Source\DAL\Interfaces\Services\IUserService;
+use Illuminate\Http\Request;
 
 /**
  * @resource User

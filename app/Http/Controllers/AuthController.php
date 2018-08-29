@@ -8,10 +8,18 @@ use Tymon\JWTAuth\Exceptions\JWTException;
 use Validator, DB, Hash, Mail;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Mail\Message;
+
+/**
+ * @resource Auth
+ * JWT Auth
+ *
+ */
 class AuthController extends Controller
 {
     /**
      * API Recover Password
+     *
+     * Метод sendResetLink в процессе разработки
      *
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
@@ -38,7 +46,8 @@ class AuthController extends Controller
     }
 
     /**
-     * API Login, on success return JWT Auth token
+     * API Login
+     * On success return JWT Auth token
      *
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
@@ -61,7 +70,6 @@ class AuthController extends Controller
         $credentials['is_verified'] = 1;
 
         try {
-            $token = JWTAuth::attempt($credentials);
             // attempt to verify the credentials and create a token for the user
             if (! $token = JWTAuth::attempt($credentials)) {
                 return response()->json(['success' => false, 'error' => 'We cant find an account with this credentials. Please make sure you entered the right information and you have verified your email address.'], 404);
