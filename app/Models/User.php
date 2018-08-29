@@ -14,7 +14,6 @@ class User extends Eloquent implements Authenticatable, JWTSubject
     use Notifiable;
     use AuthenticableTrait;
 
-    use Relations\HasMany\RolesOfUser;
 
     protected $connection = 'mongodb';
     protected $collection = 'users';
@@ -35,6 +34,7 @@ class User extends Eloquent implements Authenticatable, JWTSubject
     }
 
     use Relations\HasMany\MetaOfUser;
+    use Relations\HasMany\RolesOfUser;
 
     /**
      * Get the identifier that will be stored in the subject claim of the JWT.
@@ -52,6 +52,13 @@ class User extends Eloquent implements Authenticatable, JWTSubject
      */
     public function getJWTCustomClaims()
     {
-        return [];
+        $roles = $this->roles_of_user;
+        $array_roles = [];
+        foreach ($roles as $role) {
+            array_push($array_roles, $role->role->name);
+        }
+        return [
+            'roles' => implode(",", $array_roles)
+        ];
     }
 }

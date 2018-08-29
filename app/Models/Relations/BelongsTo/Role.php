@@ -6,6 +6,6 @@ trait Role
 {
     public function role()
     {
-        return $this->belongsTo('App\Models\Role', 'role_id');
+        return $this->belongsTo('App\Models\Role', 'role__id');
     }
 }

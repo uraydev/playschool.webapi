@@ -16,8 +16,8 @@ class CreateIndexColumnsUserRolesCollection extends Migration
     public function up()
     {
         Schema::connection($this->connection)->table('user_roles', function (Blueprint $collection) {
-            $collection->index('user_id');
-            $collection->index('role_id');
+            $collection->index('user__id');
+            $collection->index('role__id');
         });
     }
 

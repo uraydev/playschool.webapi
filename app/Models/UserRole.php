@@ -2,13 +2,16 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 
-class UserRole extends Model
+class UserRole extends Eloquent
 {
+    use Relations\BelongsTo\User;
+    use Relations\BelongsTo\Role;
+
     protected $connection = 'mongodb';
     protected $collection = 'user_roles';
     protected $primaryKey = '_id';
 
-    protected $fillable = ['user_id', 'role_id'];
+    protected $fillable = ['user__id', 'role__id'];
 }

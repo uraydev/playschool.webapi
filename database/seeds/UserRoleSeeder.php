@@ -13,8 +13,9 @@ class UserRoleSeeder extends Seeder
     {
         DB::collection('user_roles')->delete();
 
-        DB::collection('user_roles')->insert(['user_id' => 999, 'role_id' => 1000]);
-        DB::collection('user_roles')->insert(['user_id' => 1000, 'role_id' => 1001]);
+        DB::collection('user_roles')->insert(['user__id' => '000000000000000000000003', 'role__id' => 'f00000000000000000000001']);
+        DB::collection('user_roles')->insert(['user__id' => '000000000000000000000003', 'role__id' => 'f00000000000000000000003']);
+        DB::collection('user_roles')->insert(['user__id' => '000000000000000000000001', 'role__id' => 'f00000000000000000000002']);
 
     }
 }

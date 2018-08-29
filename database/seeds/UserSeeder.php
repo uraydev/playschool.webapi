@@ -3,6 +3,8 @@
 use Illuminate\Database\Seeder;
 use Carbon\Carbon;
 
+
+
 class UserSeeder extends Seeder
 {
     /**
@@ -14,11 +16,9 @@ class UserSeeder extends Seeder
     {
         DB::collection('users')->delete();
 
-        dd(MongoDB\BSON\ObjectId::__toString);
-
         DB::collection('users')->insert(
             [
-                '_id' => ObjectId("57f79499cd3aa1000a5643b7"),
+                '_id' => new MongoDB\BSON\ObjectId('000000000000000000000001'),
                 'surname' => 'Иванов', 
                 'name' => 'Иванов', 
                 'middlename' => 'Иванович',
@@ -32,7 +32,7 @@ class UserSeeder extends Seeder
         );
         DB::collection('users')->insert(
             [
-                '_id' => 1001,
+                '_id' => new MongoDB\BSON\ObjectId('000000000000000000000002'),
                 'surname' => 'Петров', 
                 'name' => 'Петр', 
                 'middlename' => 'Петрович',
@@ -46,7 +46,7 @@ class UserSeeder extends Seeder
         );
         DB::collection('users')->insert(
             [
-                '_id' => 999,
+                '_id' => new MongoDB\BSON\ObjectId('000000000000000000000003'),
                 'surname' => 'Юсупов',
                 'name' => 'Замир',
                 'middlename' => 'Алмасович',
