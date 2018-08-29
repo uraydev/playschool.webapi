@@ -13,14 +13,15 @@ class UserSeeder extends Seeder
     public function run()
     {
         DB::collection('users')->delete();
-        
+
         DB::collection('users')->insert(
             [
                 '_id' => 1000,
                 'surname' => 'Иванов', 
                 'name' => 'Иванов', 
-                'partonymic' => 'Иванович',
+                'middlename' => 'Иванович',
                 'email' => 'test1@test.ru',
+                'password' => \Illuminate\Support\Facades\Hash::make("123"),
                 'is_verified' => 0,
                 'remember_token' => null,
                 'confirm_token' => null,
@@ -32,9 +33,24 @@ class UserSeeder extends Seeder
                 '_id' => 1001,
                 'surname' => 'Петров', 
                 'name' => 'Петр', 
-                'partonymic' => 'Петрович',
+                'middlename' => 'Петрович',
                 'email' => 'test2@test.ru',
+                'password' => \Illuminate\Support\Facades\Hash::make("123"),
                 'is_verified' => 0,
+                'remember_token' => null,
+                'confirm_token' => null,
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ]
+        );
+        DB::collection('users')->insert(
+            [
+                '_id' => 999,
+                'surname' => 'Юсупов',
+                'name' => 'Замир',
+                'middlename' => 'Алмасович',
+                'email' => 'jusupovz@gmail.com',
+                'password' => \Illuminate\Support\Facades\Hash::make("123"),
+                'is_verified' => 1,
                 'remember_token' => null,
                 'confirm_token' => null,
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')

@@ -20,6 +20,8 @@ class CreateIndexColumnsUsersCollection extends Migration
             $collection->index('surname');
             $collection->index('name');
             $collection->index('middlename');
+            $collection->index('email');
+            $collection->index('password');
             $collection->index('is_verified');
             $collection->index('remember_token');
             $collection->index('confirm_token');

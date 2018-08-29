@@ -50,6 +50,6 @@ class User extends Eloquent implements Authenticatable, JWTSubject
      */
     public function getJWTCustomClaims()
     {
-        return [];
+        return ['test' => '12345'];
     }
 }
