@@ -23,16 +23,6 @@ class PositionController extends _BaseApiController
     }
 
     /**
-     * Get Position
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function show()
-    {
-        return null;
-    }
-
-    /**
      * Update
      *
      * @return \Illuminate\Http\Response

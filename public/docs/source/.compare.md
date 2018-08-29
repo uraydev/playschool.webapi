@@ -14,6 +14,7 @@ toc_footers:
 ---
 <!-- START_INFO -->
 
+
 # Info
 
 Welcome to the generated API reference.
@@ -56,7 +57,8 @@ $.ajax(settings).done(function (response) {
 <!-- END_8ae5d428da27b2b014dc767c2f19a813 -->
 
 <!-- START_8c0e48cd8efa861b308fc45872ff0837 -->
-## API Login, on success return JWT Auth token
+## API Login
+On success return JWT Auth token
 
 > Example request:
 
@@ -204,22 +206,22 @@ $.ajax(settings).done(function (response) {
 ```json
 [
     {
-        "_id": "5b85906fce78a22bb4007ac8",
+        "_id": "5b86a2dfce78a217700014f8",
         "name": "Demand Name 1",
         "description": "Demand description 1",
         "author_id": 1000,
         "responsible_id": 1000,
-        "created_at": "2018-08-28 18:11:59",
-        "updated_at": "2018-08-28 18:11:59"
+        "created_at": "2018-08-29 13:42:55",
+        "updated_at": "2018-08-29 13:42:55"
     },
     {
-        "_id": "5b85906fce78a22bb4007ac9",
+        "_id": "5b86a2dfce78a217700014f9",
         "name": "Demand Name 2",
         "description": "Demand description 2",
         "author_id": 1000,
         "responsible_id": 1001,
-        "created_at": "2018-08-28 18:11:59",
-        "updated_at": "2018-08-28 18:11:59"
+        "created_at": "2018-08-29 13:42:55",
+        "updated_at": "2018-08-29 13:42:55"
     }
 ]
 ```
@@ -266,7 +268,8 @@ $.ajax(settings).done(function (response) {
 <!-- END_375a6d54f0f37753f2d6779b2d175766 -->
 
 <!-- START_a98795a64b25b67ccf18601ade81075c -->
-## Get Position
+## Get all
+Выводит коллекцию всех объектов
 
 > Example request:
 
@@ -294,7 +297,7 @@ $.ajax(settings).done(function (response) {
 > Example response:
 
 ```json
-null
+{}
 ```
 
 ### HTTP Request
@@ -410,36 +413,36 @@ $.ajax(settings).done(function (response) {
         "_id": 1000,
         "name": "teacher",
         "description": "Воспитатель",
-        "created_at": "2018-08-28 18:11:59",
-        "updated_at": "2018-08-28 18:11:59"
+        "created_at": "2018-08-29 13:42:55",
+        "updated_at": "2018-08-29 13:42:55"
     },
     {
         "_id": 1001,
         "name": "doctor",
         "description": "Медицинский работник",
-        "created_at": "2018-08-28 18:11:59",
-        "updated_at": "2018-08-28 18:11:59"
+        "created_at": "2018-08-29 13:42:55",
+        "updated_at": "2018-08-29 13:42:55"
     },
     {
         "_id": 1002,
         "name": "supplier",
         "description": "МТО",
-        "created_at": "2018-08-28 18:11:59",
-        "updated_at": "2018-08-28 18:11:59"
+        "created_at": "2018-08-29 13:42:55",
+        "updated_at": "2018-08-29 13:42:55"
     },
     {
         "_id": 1003,
         "name": "clerk",
         "description": "Делопроизводитель",
-        "created_at": "2018-08-28 18:11:59",
-        "updated_at": "2018-08-28 18:11:59"
+        "created_at": "2018-08-29 13:42:55",
+        "updated_at": "2018-08-29 13:42:55"
     },
     {
         "_id": 1004,
         "name": "administrator",
         "description": "Управляющий",
-        "created_at": "2018-08-28 18:11:59",
-        "updated_at": "2018-08-28 18:11:59"
+        "created_at": "2018-08-29 13:42:55",
+        "updated_at": "2018-08-29 13:42:55"
     }
 ]
 ```
@@ -486,7 +489,8 @@ $.ajax(settings).done(function (response) {
 <!-- END_5e751c3a3c62c40dd6b382609d1f14ab -->
 
 <!-- START_664ae746449fd4b5cc40811fc91a7eaa -->
-## Get Position
+## Get all
+Выводит коллекцию всех объектов
 
 > Example request:
 
@@ -514,7 +518,7 @@ $.ajax(settings).done(function (response) {
 > Example response:
 
 ```json
-null
+{}
 ```
 
 ### HTTP Request
@@ -627,43 +631,43 @@ $.ajax(settings).done(function (response) {
 ```json
 [
     {
-        "_id": 1000,
+        "_id": "000000000000000000000001",
         "surname": "Иванов",
         "name": "Иванов",
-        "partonymic": "Иванович",
+        "middlename": "Иванович",
         "email": "test1@test.ru",
+        "password": "$2y$10$nPzzawoXjLw8f9wjuhhY9uigJURFaGDS9p9\/SSlAW3fcbxq2g0mLS",
         "is_verified": 0,
         "remember_token": null,
         "confirm_token": null,
-        "created_at": "2018-08-28 18:11:59",
-        "updated_at": "2018-08-28 18:11:59",
-        "phone": "+79222222222",
-        "dob": "1990-01-01",
-        "number": "100"
+        "created_at": "2018-08-29 13:42:55",
+        "updated_at": "2018-08-29 13:42:55"
     },
     {
-        "_id": 1001,
+        "_id": "000000000000000000000002",
         "surname": "Петров",
         "name": "Петр",
-        "partonymic": "Петрович",
+        "middlename": "Петрович",
         "email": "test2@test.ru",
+        "password": "$2y$10$ZKvviDHOc1zeCe6pdhlvUuR5PTul1OgmdIkDsy.FNki26\/f1KM0Uu",
         "is_verified": 0,
         "remember_token": null,
         "confirm_token": null,
-        "created_at": "2018-08-28 18:11:59",
-        "updated_at": "2018-08-28 18:11:59",
-        "phone": "+7933333333",
-        "dob": "1970-06-01",
-        "number": "101"
+        "created_at": "2018-08-29 13:42:55",
+        "updated_at": "2018-08-29 13:42:55"
     },
     {
-        "_id": "5b85908cce78a22db8002759",
-        "name": "zamir",
+        "_id": "000000000000000000000003",
+        "surname": "Юсупов",
+        "name": "Замир",
+        "middlename": "Алмасович",
         "email": "jusupovz@gmail.com",
-        "password": "$2y$10$aIHUKaQJjuWcCA3NBa3yl..kcerNBq1iQgvdiyJ.V8h3s2rpH9jp.",
-        "updated_at": "2018-08-28 18:12:37",
-        "created_at": "2018-08-28 18:12:28",
-        "is_verified": 1
+        "password": "$2y$10$h50aJnwt5D9Ij\/7zFKMHcOjnA8ZCxZxvCmz7CZc9eEXXy0nn5dc1e",
+        "is_verified": 1,
+        "remember_token": null,
+        "confirm_token": null,
+        "created_at": "2018-08-29 13:42:55",
+        "updated_at": "2018-08-29 13:42:55"
     }
 ]
 ```
@@ -712,9 +716,8 @@ $.ajax(settings).done(function (response) {
 <!-- END_96b8840d06e94c53a87e83e9edfb44eb -->
 
 <!-- START_eda2b3d78b052ccb36bffab3b344d72a -->
-## Get User
-
-Выводит пользователей по ID
+## Get all
+Выводит коллекцию всех объектов
 
 > Example request:
 
@@ -742,7 +745,7 @@ $.ajax(settings).done(function (response) {
 > Example response:
 
 ```json
-null
+{}
 ```
 
 ### HTTP Request
@@ -858,52 +861,52 @@ $.ajax(settings).done(function (response) {
 ```json
 [
     {
-        "_id": "5b85906fce78a22bb4007ac2",
-        "user__id": 1000,
+        "_id": "5b86a2dfce78a217700014f2",
+        "user__id": "000000000000000000000001",
         "key": "phone",
         "value": "+79222222222",
-        "created_at": "2018-08-28 18:11:59",
-        "updated_at": "2018-08-28 18:11:59"
+        "created_at": "2018-08-29 13:42:55",
+        "updated_at": "2018-08-29 13:42:55"
     },
     {
-        "_id": "5b85906fce78a22bb4007ac3",
-        "user__id": 1000,
+        "_id": "5b86a2dfce78a217700014f3",
+        "user__id": "000000000000000000000001",
         "key": "dob",
         "value": "1990-01-01",
-        "created_at": "2018-08-28 18:11:59",
-        "updated_at": "2018-08-28 18:11:59"
+        "created_at": "2018-08-29 13:42:55",
+        "updated_at": "2018-08-29 13:42:55"
     },
     {
-        "_id": "5b85906fce78a22bb4007ac4",
-        "user__id": 1000,
+        "_id": "5b86a2dfce78a217700014f4",
+        "user__id": "000000000000000000000001",
         "key": "number",
         "value": "100",
-        "created_at": "2018-08-28 18:11:59",
-        "updated_at": "2018-08-28 18:11:59"
+        "created_at": "2018-08-29 13:42:55",
+        "updated_at": "2018-08-29 13:42:55"
     },
     {
-        "_id": "5b85906fce78a22bb4007ac5",
-        "user__id": 1001,
+        "_id": "5b86a2dfce78a217700014f5",
+        "user__id": "000000000000000000000002",
         "key": "phone",
         "value": "+7933333333",
-        "created_at": "2018-08-28 18:11:59",
-        "updated_at": "2018-08-28 18:11:59"
+        "created_at": "2018-08-29 13:42:55",
+        "updated_at": "2018-08-29 13:42:55"
     },
     {
-        "_id": "5b85906fce78a22bb4007ac6",
-        "user__id": 1001,
+        "_id": "5b86a2dfce78a217700014f6",
+        "user__id": "000000000000000000000002",
         "key": "dob",
         "value": "1970-06-01",
-        "created_at": "2018-08-28 18:11:59",
-        "updated_at": "2018-08-28 18:11:59"
+        "created_at": "2018-08-29 13:42:55",
+        "updated_at": "2018-08-29 13:42:55"
     },
     {
-        "_id": "5b85906fce78a22bb4007ac7",
-        "user__id": 1001,
+        "_id": "5b86a2dfce78a217700014f7",
+        "user__id": "000000000000000000000002",
         "key": "number",
         "value": "101",
-        "created_at": "2018-08-28 18:11:59",
-        "updated_at": "2018-08-28 18:11:59"
+        "created_at": "2018-08-29 13:42:55",
+        "updated_at": "2018-08-29 13:42:55"
     }
 ]
 ```

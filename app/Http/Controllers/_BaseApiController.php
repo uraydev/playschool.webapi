@@ -30,6 +30,11 @@ class _BaseApiController extends Controller
         return response()->json($data, 200, $this->header, JSON_UNESCAPED_UNICODE);
     }
 
+    /**
+     * Get all
+     * Выводит коллекцию всех объектов
+     * @return \Illuminate\Http\Response
+     */
     protected function show($id)
     {
         $data = $this->contextService->find_object_by_id($id);
