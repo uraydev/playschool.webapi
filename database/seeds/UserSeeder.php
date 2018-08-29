@@ -14,9 +14,11 @@ class UserSeeder extends Seeder
     {
         DB::collection('users')->delete();
 
+        dd(MongoDB\BSON\ObjectId::__toString);
+
         DB::collection('users')->insert(
             [
-                '_id' => 1000,
+                '_id' => ObjectId("57f79499cd3aa1000a5643b7"),
                 'surname' => 'Иванов', 
                 'name' => 'Иванов', 
                 'middlename' => 'Иванович',

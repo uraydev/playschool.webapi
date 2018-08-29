@@ -27,6 +27,14 @@ interface ICrud
     public function find_object_by_id($id);
 
     /**
+     * Поиск объекта по id
+     * @param $id
+     * @param $attribute
+     * @return mixed
+     */
+    public function find_object_by($id, $attribute);
+
+    /**
      * Создает новый объект
      * @param $data
      * @return mixed

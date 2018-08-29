@@ -30,6 +30,12 @@ class _BaseApiController extends Controller
         return response()->json($data, 200, $this->header, JSON_UNESCAPED_UNICODE);
     }
 
+    protected function show($id)
+    {
+        $data = $this->contextService->find_object_by_id($id);
+        return response()->json($data, 200, $this->header, JSON_UNESCAPED_UNICODE);
+    }
+
 //    /**
 //     * Выводит страницу для создания объекта
 //     *

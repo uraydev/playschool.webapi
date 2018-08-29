@@ -55,6 +55,17 @@ abstract class BaseCrudService
     }
 
     /**
+     * Поиск объекта по полю
+     * @param $id
+     * @param $attribute
+     * @return mixed
+     */
+    public function find_object_by($id, $attribute)
+    {
+        return $this->context->findBy($attribute, $id);
+    }
+
+    /**
      * Удаляет объект из базы
      * @param $id
      * @return mixed

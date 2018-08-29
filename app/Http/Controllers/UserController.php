@@ -38,18 +38,6 @@ class UserController extends _BaseApiController
 //        return response()->json($data, 200, $headers, JSON_UNESCAPED_UNICODE);
 //    }
 
-    /**
-     * Get User
-     * 
-     * Выводит пользователей по ID
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
     /**
      * Store
