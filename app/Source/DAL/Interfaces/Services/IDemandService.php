@@ -6,4 +6,5 @@ use App\Source\DAL\Interfaces\ICrud;
 
 interface IDemandService extends ICrud
 {
+    public function new_demand($company, $array);
 }

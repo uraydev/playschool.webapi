@@ -18,9 +18,6 @@ class CreateIndexColumnsDemandsCollection extends Migration
         Schema::connection($this->connection)->table('demands', function (Blueprint $collection) {
             $collection->index('name');
             $collection->index('description');
-            $collection->index('author_id');
-            $collection->index('responsible_id');
-            $collection->timestamps();
         });
     }
 
