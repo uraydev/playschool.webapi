@@ -17,24 +17,8 @@ class UserService extends BaseCrudService implements IUserService
         parent::__construct($context);
     }
 
-    /**
-     * Îáíîâëÿåò îáúåêò
-     * @param $id
-     * @param $data
-     * @return mixed
-     */
-    public function update_object($id, $data)
+    public function new_user($company, $data)
     {
-        // TODO: Implement update_object() method.
-    }
-
-    /**
-     * Ñîçäàåò íîâûé îáúåêò
-     * @param $data
-     * @return mixed
-     */
-    public function new_object($data)
-    {
-        // TODO: Implement new_object() method.
+        return $company->users()->create($data);
     }
 }

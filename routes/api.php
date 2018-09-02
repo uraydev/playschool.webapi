@@ -32,6 +32,7 @@ Route::group(array('prefix' => 'v1', 'middleware' => []), function () {
   Route::apiResource('user_meta','UserMetaController');
   Route::apiResource('position','PositionController');
   Route::apiResource('demand','DemandController');
+  Route::apiResource('company','CompanyController');
 
   // Route::resource('child','ChildController');
 

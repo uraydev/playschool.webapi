@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Source\DAL\Interfaces\Services\IUserService;
 use Illuminate\Http\Request;
+use App\Models\User;
 
 /**
  * @resource User
@@ -36,6 +37,12 @@ class UserController extends _BaseApiController
 //        $data = User::all();
 //        $headers = [ 'Content-Type' => 'application/json; charset=utf-8' ];
 //        return response()->json($data, 200, $headers, JSON_UNESCAPED_UNICODE);
+//    }
+
+//    public function show($id) {
+//        $new = User::create(["title"=>"Simple new", "body"=>"this is a simple news"]);
+//        $comment = $new->meta_list_e()->create(["subject"=>"comment 1", "body"=>"my comment"]);
+//        dd(123);
 //    }
 
 

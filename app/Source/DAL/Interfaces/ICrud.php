@@ -27,7 +27,7 @@ interface ICrud
     public function find_object_by_id($id);
 
     /**
-     * Поиск объекта по id
+     * Поиск объекта по конкретному полю
      * @param $id
      * @param $attribute
      * @return mixed

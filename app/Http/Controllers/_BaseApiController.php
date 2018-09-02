@@ -31,8 +31,9 @@ class _BaseApiController extends Controller
     }
 
     /**
-     * Get all
-     * Выводит коллекцию всех объектов
+     * Get
+     * Выводит конкретный объект
+     * @param $id
      * @return \Illuminate\Http\Response
      */
     protected function show($id)

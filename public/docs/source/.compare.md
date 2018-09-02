@@ -173,6 +173,322 @@ $.ajax(settings).done(function (response) {
 
 <!-- END_394d402f1e299237fa88b4466e18226b -->
 
+#Company
+<!-- START_4780e721012ed7f36e506754e8254633 -->
+## Get all
+Выводит коллекцию всех объектов
+
+> Example request:
+
+```bash
+curl -X GET "http://localhost/api/v1/company" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/api/v1/company",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+> Example response:
+
+```json
+[
+    {
+        "_id": "5b8c0a0fce78a231fc00337c",
+        "uid": "1000",
+        "name": "Company 1 test",
+        "users": [],
+        "demands": [
+            {
+                "_id": {
+                    "$oid": "5b8c0a0fce78a231fc00337b"
+                },
+                "name": "Demand Test #1",
+                "description": "Demand Test #1 description"
+            }
+        ]
+    },
+    {
+        "_id": "5b8c0a0fce78a231fc00337d",
+        "uid": "1001",
+        "name": "Company 2 test",
+        "users": [],
+        "demands": []
+    },
+    {
+        "_id": "5b8c0a0fce78a231fc00337e",
+        "uid": "1002",
+        "name": "Company 3 test",
+        "users": [],
+        "demands": [
+            {
+                "name": "test surname",
+                "description": "test name",
+                "updated_at": {
+                    "$date": {
+                        "$numberLong": "1535905144000"
+                    }
+                },
+                "created_at": {
+                    "$date": {
+                        "$numberLong": "1535905144000"
+                    }
+                },
+                "_id": {
+                    "$oid": "5b8c0d78ce78a224f000611e"
+                }
+            },
+            {
+                "name": "test surname",
+                "description": "test name",
+                "updated_at": {
+                    "$date": {
+                        "$numberLong": "1535905169000"
+                    }
+                },
+                "created_at": {
+                    "$date": {
+                        "$numberLong": "1535905169000"
+                    }
+                },
+                "_id": {
+                    "$oid": "5b8c0d91ce78a224f000611f"
+                }
+            },
+            {
+                "name": "test surname",
+                "description": "test name",
+                "updated_at": {
+                    "$date": {
+                        "$numberLong": "1535905316000"
+                    }
+                },
+                "created_at": {
+                    "$date": {
+                        "$numberLong": "1535905316000"
+                    }
+                },
+                "_id": {
+                    "$oid": "5b8c0e24ce78a224f0006120"
+                }
+            },
+            {
+                "name": "test surname",
+                "description": "test name",
+                "updated_at": {
+                    "$date": {
+                        "$numberLong": "1535905319000"
+                    }
+                },
+                "created_at": {
+                    "$date": {
+                        "$numberLong": "1535905319000"
+                    }
+                },
+                "_id": {
+                    "$oid": "5b8c0e27ce78a224f0006121"
+                }
+            },
+            {
+                "name": "test surname",
+                "description": "test name",
+                "updated_at": {
+                    "$date": {
+                        "$numberLong": "1535905342000"
+                    }
+                },
+                "created_at": {
+                    "$date": {
+                        "$numberLong": "1535905342000"
+                    }
+                },
+                "_id": {
+                    "$oid": "5b8c0e3ece78a224f0006122"
+                }
+            }
+        ]
+    }
+]
+```
+
+### HTTP Request
+`GET api/v1/company`
+
+`HEAD api/v1/company`
+
+
+<!-- END_4780e721012ed7f36e506754e8254633 -->
+
+<!-- START_c694d0d5865ccb731d64c8931b1befe1 -->
+## Store
+
+Добавляет в дервео базы узел для компании
+
+> Example request:
+
+```bash
+curl -X POST "http://localhost/api/v1/company" \
+-H "Accept: application/json" \
+    -d "uid"="et" \
+    -d "name"="et" \
+
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/api/v1/company",
+    "method": "POST",
+    "data": {
+        "uid": "et",
+        "name": "et"
+},
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+
+### HTTP Request
+`POST api/v1/company`
+
+#### Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    uid | string |  required  | 
+    name | string |  required  | 
+
+<!-- END_c694d0d5865ccb731d64c8931b1befe1 -->
+
+<!-- START_a3ad9c6f2c33440b96af5034836f9901 -->
+## Get
+Выводит конкретный объект
+
+> Example request:
+
+```bash
+curl -X GET "http://localhost/api/v1/company/{company}" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/api/v1/company/{company}",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+> Example response:
+
+```json
+{}
+```
+
+### HTTP Request
+`GET api/v1/company/{company}`
+
+`HEAD api/v1/company/{company}`
+
+
+<!-- END_a3ad9c6f2c33440b96af5034836f9901 -->
+
+<!-- START_2fea38ab65eac8cc420efd18be831669 -->
+## Update
+
+> Example request:
+
+```bash
+curl -X PUT "http://localhost/api/v1/company/{company}" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/api/v1/company/{company}",
+    "method": "PUT",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+
+### HTTP Request
+`PUT api/v1/company/{company}`
+
+`PATCH api/v1/company/{company}`
+
+
+<!-- END_2fea38ab65eac8cc420efd18be831669 -->
+
+<!-- START_0fd2a22cb210db9268cf1034ed855c27 -->
+## Remove
+Удаляет объект
+
+> Example request:
+
+```bash
+curl -X DELETE "http://localhost/api/v1/company/{company}" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/api/v1/company/{company}",
+    "method": "DELETE",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+
+### HTTP Request
+`DELETE api/v1/company/{company}`
+
+
+<!-- END_0fd2a22cb210db9268cf1034ed855c27 -->
+
 #Demand
 <!-- START_db687e08bedb8e09e996c420294838b4 -->
 ## Get all
@@ -204,26 +520,7 @@ $.ajax(settings).done(function (response) {
 > Example response:
 
 ```json
-[
-    {
-        "_id": "5b86a2dfce78a217700014f8",
-        "name": "Demand Name 1",
-        "description": "Demand description 1",
-        "author_id": 1000,
-        "responsible_id": 1000,
-        "created_at": "2018-08-29 13:42:55",
-        "updated_at": "2018-08-29 13:42:55"
-    },
-    {
-        "_id": "5b86a2dfce78a217700014f9",
-        "name": "Demand Name 2",
-        "description": "Demand description 2",
-        "author_id": 1000,
-        "responsible_id": 1001,
-        "created_at": "2018-08-29 13:42:55",
-        "updated_at": "2018-08-29 13:42:55"
-    }
-]
+[]
 ```
 
 ### HTTP Request
@@ -241,7 +538,12 @@ $.ajax(settings).done(function (response) {
 
 ```bash
 curl -X POST "http://localhost/api/v1/demand" \
--H "Accept: application/json"
+-H "Accept: application/json" \
+    -d "company_uid"="nulla" \
+    -d "demand"="nulla" \
+    -d "demand.name"="nulla" \
+    -d "demand.description"="nulla" \
+
 ```
 
 ```javascript
@@ -250,6 +552,12 @@ var settings = {
     "crossDomain": true,
     "url": "http://localhost/api/v1/demand",
     "method": "POST",
+    "data": {
+        "company_uid": "nulla",
+        "demand": "nulla",
+        "demand.name": "nulla",
+        "demand.description": "nulla"
+},
     "headers": {
         "accept": "application/json"
     }
@@ -264,12 +572,20 @@ $.ajax(settings).done(function (response) {
 ### HTTP Request
 `POST api/v1/demand`
 
+#### Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    company_uid | string |  required  | 
+    demand | array |  required  | Minimum: `2`
+    demand.name | string |  required  | 
+    demand.description | string |  required  | 
 
 <!-- END_375a6d54f0f37753f2d6779b2d175766 -->
 
 <!-- START_a98795a64b25b67ccf18601ade81075c -->
-## Get all
-Выводит коллекцию всех объектов
+## Get
+Выводит конкретный объект
 
 > Example request:
 
@@ -413,36 +729,36 @@ $.ajax(settings).done(function (response) {
         "_id": 1000,
         "name": "teacher",
         "description": "Воспитатель",
-        "created_at": "2018-08-29 13:42:55",
-        "updated_at": "2018-08-29 13:42:55"
+        "created_at": "2018-09-02 16:04:31",
+        "updated_at": "2018-09-02 16:04:31"
     },
     {
         "_id": 1001,
         "name": "doctor",
         "description": "Медицинский работник",
-        "created_at": "2018-08-29 13:42:55",
-        "updated_at": "2018-08-29 13:42:55"
+        "created_at": "2018-09-02 16:04:31",
+        "updated_at": "2018-09-02 16:04:31"
     },
     {
         "_id": 1002,
         "name": "supplier",
         "description": "МТО",
-        "created_at": "2018-08-29 13:42:55",
-        "updated_at": "2018-08-29 13:42:55"
+        "created_at": "2018-09-02 16:04:31",
+        "updated_at": "2018-09-02 16:04:31"
     },
     {
         "_id": 1003,
         "name": "clerk",
         "description": "Делопроизводитель",
-        "created_at": "2018-08-29 13:42:55",
-        "updated_at": "2018-08-29 13:42:55"
+        "created_at": "2018-09-02 16:04:31",
+        "updated_at": "2018-09-02 16:04:31"
     },
     {
         "_id": 1004,
         "name": "administrator",
         "description": "Управляющий",
-        "created_at": "2018-08-29 13:42:55",
-        "updated_at": "2018-08-29 13:42:55"
+        "created_at": "2018-09-02 16:04:31",
+        "updated_at": "2018-09-02 16:04:31"
     }
 ]
 ```
@@ -489,8 +805,8 @@ $.ajax(settings).done(function (response) {
 <!-- END_5e751c3a3c62c40dd6b382609d1f14ab -->
 
 <!-- START_664ae746449fd4b5cc40811fc91a7eaa -->
-## Get all
-Выводит коллекцию всех объектов
+## Get
+Выводит конкретный объект
 
 > Example request:
 
@@ -631,43 +947,53 @@ $.ajax(settings).done(function (response) {
 ```json
 [
     {
-        "_id": "000000000000000000000001",
+        "_id": "u1000",
         "surname": "Иванов",
         "name": "Иванов",
         "middlename": "Иванович",
         "email": "test1@test.ru",
-        "password": "$2y$10$nPzzawoXjLw8f9wjuhhY9uigJURFaGDS9p9\/SSlAW3fcbxq2g0mLS",
+        "password": "$2y$10$gbMkezUBj3Oq\/.Gqcg8UROISjCXGDE0QeC7nDiaH3KR2Mg.itOdvK",
         "is_verified": 0,
         "remember_token": null,
         "confirm_token": null,
-        "created_at": "2018-08-29 13:42:55",
-        "updated_at": "2018-08-29 13:42:55"
+        "created_at": "2018-09-02 16:04:31",
+        "updated_at": "2018-09-02 16:04:31",
+        "test": {
+            "id": "123",
+            "id2": "aaa",
+            "id3": {
+                "bbb": "sdasdasdasd asd as d"
+            }
+        },
+        "phone": "+79222222222",
+        "dob": "1990-01-01",
+        "number": "100"
     },
     {
-        "_id": "000000000000000000000002",
+        "_id": 1001,
         "surname": "Петров",
         "name": "Петр",
         "middlename": "Петрович",
         "email": "test2@test.ru",
-        "password": "$2y$10$ZKvviDHOc1zeCe6pdhlvUuR5PTul1OgmdIkDsy.FNki26\/f1KM0Uu",
+        "password": "$2y$10$Tz1hCc0DF5mEogQEopGU8ey8bA\/c9KieFUkcIuJ\/2l30BI.rrBhV2",
         "is_verified": 0,
         "remember_token": null,
         "confirm_token": null,
-        "created_at": "2018-08-29 13:42:55",
-        "updated_at": "2018-08-29 13:42:55"
+        "created_at": "2018-09-02 16:04:31",
+        "updated_at": "2018-09-02 16:04:31"
     },
     {
-        "_id": "000000000000000000000003",
+        "_id": 1002,
         "surname": "Юсупов",
         "name": "Замир",
         "middlename": "Алмасович",
         "email": "jusupovz@gmail.com",
-        "password": "$2y$10$h50aJnwt5D9Ij\/7zFKMHcOjnA8ZCxZxvCmz7CZc9eEXXy0nn5dc1e",
+        "password": "$2y$10$oTzlBbQH7jEyhaASufUvTurLjyV7tlwax\/amMtvp8S8znykm1FZTa",
         "is_verified": 1,
         "remember_token": null,
         "confirm_token": null,
-        "created_at": "2018-08-29 13:42:55",
-        "updated_at": "2018-08-29 13:42:55"
+        "created_at": "2018-09-02 16:04:31",
+        "updated_at": "2018-09-02 16:04:31"
     }
 ]
 ```
@@ -716,8 +1042,8 @@ $.ajax(settings).done(function (response) {
 <!-- END_96b8840d06e94c53a87e83e9edfb44eb -->
 
 <!-- START_eda2b3d78b052ccb36bffab3b344d72a -->
-## Get all
-Выводит коллекцию всех объектов
+## Get
+Выводит конкретный объект
 
 > Example request:
 
@@ -861,52 +1187,52 @@ $.ajax(settings).done(function (response) {
 ```json
 [
     {
-        "_id": "5b86a2dfce78a217700014f2",
-        "user__id": "000000000000000000000001",
+        "_id": "5b8c0a0fce78a231fc003372",
+        "user__id": "u1000",
         "key": "phone",
         "value": "+79222222222",
-        "created_at": "2018-08-29 13:42:55",
-        "updated_at": "2018-08-29 13:42:55"
+        "created_at": "2018-09-02 16:04:31",
+        "updated_at": "2018-09-02 16:04:31"
     },
     {
-        "_id": "5b86a2dfce78a217700014f3",
-        "user__id": "000000000000000000000001",
+        "_id": "5b8c0a0fce78a231fc003373",
+        "user__id": "u1000",
         "key": "dob",
         "value": "1990-01-01",
-        "created_at": "2018-08-29 13:42:55",
-        "updated_at": "2018-08-29 13:42:55"
+        "created_at": "2018-09-02 16:04:31",
+        "updated_at": "2018-09-02 16:04:31"
     },
     {
-        "_id": "5b86a2dfce78a217700014f4",
-        "user__id": "000000000000000000000001",
+        "_id": "5b8c0a0fce78a231fc003374",
+        "user__id": "u1000",
         "key": "number",
         "value": "100",
-        "created_at": "2018-08-29 13:42:55",
-        "updated_at": "2018-08-29 13:42:55"
+        "created_at": "2018-09-02 16:04:31",
+        "updated_at": "2018-09-02 16:04:31"
     },
     {
-        "_id": "5b86a2dfce78a217700014f5",
+        "_id": "5b8c0a0fce78a231fc003375",
         "user__id": "000000000000000000000002",
         "key": "phone",
         "value": "+7933333333",
-        "created_at": "2018-08-29 13:42:55",
-        "updated_at": "2018-08-29 13:42:55"
+        "created_at": "2018-09-02 16:04:31",
+        "updated_at": "2018-09-02 16:04:31"
     },
     {
-        "_id": "5b86a2dfce78a217700014f6",
+        "_id": "5b8c0a0fce78a231fc003376",
         "user__id": "000000000000000000000002",
         "key": "dob",
         "value": "1970-06-01",
-        "created_at": "2018-08-29 13:42:55",
-        "updated_at": "2018-08-29 13:42:55"
+        "created_at": "2018-09-02 16:04:31",
+        "updated_at": "2018-09-02 16:04:31"
     },
     {
-        "_id": "5b86a2dfce78a217700014f7",
+        "_id": "5b8c0a0fce78a231fc003377",
         "user__id": "000000000000000000000002",
         "key": "number",
         "value": "101",
-        "created_at": "2018-08-29 13:42:55",
-        "updated_at": "2018-08-29 13:42:55"
+        "created_at": "2018-09-02 16:04:31",
+        "updated_at": "2018-09-02 16:04:31"
     }
 ]
 ```

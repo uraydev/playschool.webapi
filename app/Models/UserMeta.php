@@ -6,7 +6,7 @@ use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 
 class UserMeta extends Eloquent
 {
-    use Relations\BelongsTo\User;
+//    use Relations\BelongsTo\User;
 
     protected $connection = 'mongodb';
     protected $collection = 'users_meta';

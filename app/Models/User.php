@@ -20,13 +20,15 @@ class User extends Eloquent implements Authenticatable, JWTSubject
     protected $primaryKey = '_id';
 
     protected $fillable = [
-        'surname', 'name', 'email', 'patronymic', 'is_verified', 'password', 'remember_token'
+        'surname', 'name', 'email', 'middlename', 'is_verified', 'password', 'remember_token'
     ];
 
     public function toArray()
     {
         $array = parent::toArray();
         $meta_list = $this->meta_list;
+//        $meta_list_e = $this->meta_list_e;
+//        dd($meta_list_e);
         foreach ($meta_list as $meta) {
             $array[$meta->key] = $meta->value;
         }
@@ -35,6 +37,7 @@ class User extends Eloquent implements Authenticatable, JWTSubject
 
     use Relations\HasMany\MetaOfUser;
     use Relations\HasMany\RolesOfUser;
+//    use Relations\EmbedMany\MetaOfUserE;
 
     /**
      * Get the identifier that will be stored in the subject claim of the JWT.

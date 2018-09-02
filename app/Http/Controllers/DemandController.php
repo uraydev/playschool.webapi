@@ -49,4 +49,13 @@ class DemandController extends _BaseApiController
             return response()->json($e->getMessage(), 500, $this->header, JSON_UNESCAPED_UNICODE);
         }
     }
+
+    /**
+     * Update
+     *
+     */
+    public function update()
+    {
+        return null;
+    }
 }
