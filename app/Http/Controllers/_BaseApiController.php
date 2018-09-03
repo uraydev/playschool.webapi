@@ -13,11 +13,27 @@ class _BaseApiController extends Controller
 {
     protected $contextService;
     protected $header = ['Content-Type' => 'application/json; charset=utf-8'];
+    private $companyService;
+//    public $company;
 
     public function __construct(ICrud $service)
     {
         $this->contextService = $service;
+        $this->companyService = resolve('App\Source\DAL\Interfaces\Services\ICompanyService');
     }
+
+
+//    //region Public methods
+//
+//    /**
+//     * Если предыдущий вызов checkCompany завершился успещно $company будет содержать модель Company, иначе null
+//     * @return mixed
+//     */
+//    public function getCompany()
+//    {
+//        return $this->company;
+//    }
+//    //endregion
 
     /**
      * Get all
@@ -84,4 +100,46 @@ class _BaseApiController extends Controller
             return response()->json($e->getMessage(), 500, $this->header, JSON_UNESCAPED_UNICODE);
         }
     }
+
+    protected function error_response(Exception $e) {
+        return response()->json($e->getMessage(), 500, $this->header, JSON_UNESCAPED_UNICODE);
+    }
+
+
+    /**
+     * Проверяет компанию по uid
+     * @param $uid
+     * @return mixed
+     */
+    protected function getCompany($uid) {
+        $findCompany = $this->companyService->find_object_by($uid, 'uid')->get();
+        if ($findCompany === null || count($findCompany) === 0) $this->responseNotFoundCompany();
+        if (count($findCompany)>1) $this->responseCompanyNotUnique();
+        return $findCompany->first();
+    }
+
+
+    //region Responses
+    /**
+     * JsonResponse - заданная компания не нйдена
+     * @return \Illuminate\Http\JsonResponse
+     */
+    protected function responseNotFoundCompany()
+    {
+        throw new Exception('Указанный UID компании не найден', 404);
+    }
+
+    /**
+     * JsonResponse - UID не уникален
+     * @return \Illuminate\Http\JsonResponse
+     */
+    protected function responseCompanyNotUnique()
+    {
+        throw new Exception('По указанному UID найдено более одной компании', 300);
+    }
+    //endregion
+
+
+
+
 }
