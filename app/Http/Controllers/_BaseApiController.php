@@ -11,15 +11,17 @@ use Mockery\CountValidator\Exception;
  */
 class _BaseApiController extends Controller
 {
-    protected $contextService;
+//    protected $contextService;
     protected $header = ['Content-Type' => 'application/json; charset=utf-8'];
     private $companyService;
+
 //    public $company;
 
-    public function __construct(ICrud $service)
+    public function __construct(ICrud $companyService)
     {
-        $this->contextService = $service;
-        $this->companyService = resolve('App\Source\DAL\Interfaces\Services\ICompanyService');
+        $this->companyService = $companyService;
+//        $this->contextService = $service;
+//        $this->companyService = resolve('App\Source\DAL\Interfaces\Services\ICompanyService');
     }
 
 
@@ -35,28 +37,28 @@ class _BaseApiController extends Controller
 //    }
 //    //endregion
 
-    /**
-     * Get all
-     * Выводит коллекцию всех объектов
-     * @return \Illuminate\Http\Response
-     */
-    protected function index()
-    {
-        $data = $this->contextService->get_objects();
-        return response()->json($data, 200, $this->header, JSON_UNESCAPED_UNICODE);
-    }
+//    /**
+//     * Get all
+//     * Выводит коллекцию всех объектов
+//     * @return \Illuminate\Http\Response
+//     */
+//    protected function index()
+//    {
+//        $data = $this->contextService->get_objects();
+//        return response()->json($data, 200, $this->header, JSON_UNESCAPED_UNICODE);
+//    }
 
-    /**
-     * Get
-     * Выводит конкретный объект
-     * @param $id
-     * @return \Illuminate\Http\Response
-     */
-    protected function show($id)
-    {
-        $data = $this->contextService->find_object_by_id($id);
-        return response()->json($data, 200, $this->header, JSON_UNESCAPED_UNICODE);
-    }
+//    /**
+//     * Get
+//     * Выводит конкретный объект
+//     * @param $id
+//     * @return \Illuminate\Http\Response
+//     */
+//    protected function show($id)
+//    {
+//        $data = $this->contextService->find_object_by_id($id);
+//        return response()->json($data, 200, $this->header, JSON_UNESCAPED_UNICODE);
+//    }
 
 //    /**
 //     * Выводит страницу для создания объекта
@@ -83,25 +85,26 @@ class _BaseApiController extends Controller
 //        else return 0;
 //    }
 
-    /**
-     * Remove
-     * Удаляет объект
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    protected function destroy($id)
-    {
-        try {
-            $find = $this->contextService->find_object_by_id($id);
-            if (!isset($find)) return response()->json('Удаляемый объект не найден', 400, $this->header, JSON_UNESCAPED_UNICODE);
-            if (!$this->contextService->remove_object($id)) return response()->json('Ошибка удаления объекта', 400, $this->header, JSON_UNESCAPED_UNICODE);
-            return response()->json(true, 200, $this->header, JSON_UNESCAPED_UNICODE);
-        } catch (Exception $e) {
-            return response()->json($e->getMessage(), 500, $this->header, JSON_UNESCAPED_UNICODE);
-        }
-    }
+//    /**
+//     * Remove
+//     * Удаляет объект
+//     * @param  int $id
+//     * @return \Illuminate\Http\Response
+//     */
+//    protected function destroy($id)
+//    {
+//        try {
+//            $find = $this->contextService->find_object_by_id($id);
+//            if (!isset($find)) return response()->json('Удаляемый объект не найден', 400, $this->header, JSON_UNESCAPED_UNICODE);
+//            if (!$this->contextService->remove_object($id)) return response()->json('Ошибка удаления объекта', 400, $this->header, JSON_UNESCAPED_UNICODE);
+//            return response()->json(true, 200, $this->header, JSON_UNESCAPED_UNICODE);
+//        } catch (Exception $e) {
+//            return response()->json($e->getMessage(), 500, $this->header, JSON_UNESCAPED_UNICODE);
+//        }
+//    }
 
-    protected function error_response(Exception $e) {
+    protected function error_response(Exception $e)
+    {
         return response()->json($e->getMessage(), 500, $this->header, JSON_UNESCAPED_UNICODE);
     }
 
@@ -111,10 +114,11 @@ class _BaseApiController extends Controller
      * @param $uid
      * @return mixed
      */
-    protected function getCompany($uid) {
+    protected function getCompany($uid)
+    {
         $findCompany = $this->companyService->find_object_by($uid, 'uid')->get();
         if ($findCompany === null || count($findCompany) === 0) $this->responseNotFoundCompany();
-        if (count($findCompany)>1) $this->responseCompanyNotUnique();
+        if (count($findCompany) > 1) $this->responseCompanyNotUnique();
         return $findCompany->first();
     }
 
@@ -138,8 +142,6 @@ class _BaseApiController extends Controller
         throw new Exception('По указанному UID найдено более одной компании', 300);
     }
     //endregion
-
-
 
 
 }

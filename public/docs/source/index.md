@@ -173,331 +173,18 @@ $.ajax(settings).done(function (response) {
 
 <!-- END_394d402f1e299237fa88b4466e18226b -->
 
-#Company
-<!-- START_4780e721012ed7f36e506754e8254633 -->
-## Get all
-Выводит коллекцию всех объектов
-
-> Example request:
-
-```bash
-curl -X GET "http://localhost/api/v1/company" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/api/v1/company",
-    "method": "GET",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-> Example response:
-
-```json
-[
-    {
-        "_id": "5b8c0a0fce78a231fc00337c",
-        "uid": "1000",
-        "name": "Company 1 test",
-        "users": [],
-        "demands": [
-            {
-                "_id": {
-                    "$oid": "5b8c0a0fce78a231fc00337b"
-                },
-                "name": "Demand Test #1",
-                "description": "Demand Test #1 description"
-            }
-        ]
-    },
-    {
-        "_id": "5b8c0a0fce78a231fc00337d",
-        "uid": "1001",
-        "name": "Company 2 test",
-        "users": [],
-        "demands": []
-    },
-    {
-        "_id": "5b8c0a0fce78a231fc00337e",
-        "uid": "1002",
-        "name": "Company 3 test",
-        "users": [],
-        "demands": [
-            {
-                "name": "test surname",
-                "description": "test name",
-                "updated_at": {
-                    "$date": {
-                        "$numberLong": "1535905144000"
-                    }
-                },
-                "created_at": {
-                    "$date": {
-                        "$numberLong": "1535905144000"
-                    }
-                },
-                "_id": {
-                    "$oid": "5b8c0d78ce78a224f000611e"
-                }
-            },
-            {
-                "name": "test surname",
-                "description": "test name",
-                "updated_at": {
-                    "$date": {
-                        "$numberLong": "1535905169000"
-                    }
-                },
-                "created_at": {
-                    "$date": {
-                        "$numberLong": "1535905169000"
-                    }
-                },
-                "_id": {
-                    "$oid": "5b8c0d91ce78a224f000611f"
-                }
-            },
-            {
-                "name": "test surname",
-                "description": "test name",
-                "updated_at": {
-                    "$date": {
-                        "$numberLong": "1535905316000"
-                    }
-                },
-                "created_at": {
-                    "$date": {
-                        "$numberLong": "1535905316000"
-                    }
-                },
-                "_id": {
-                    "$oid": "5b8c0e24ce78a224f0006120"
-                }
-            },
-            {
-                "name": "test surname",
-                "description": "test name",
-                "updated_at": {
-                    "$date": {
-                        "$numberLong": "1535905319000"
-                    }
-                },
-                "created_at": {
-                    "$date": {
-                        "$numberLong": "1535905319000"
-                    }
-                },
-                "_id": {
-                    "$oid": "5b8c0e27ce78a224f0006121"
-                }
-            },
-            {
-                "name": "test surname",
-                "description": "test name",
-                "updated_at": {
-                    "$date": {
-                        "$numberLong": "1535905342000"
-                    }
-                },
-                "created_at": {
-                    "$date": {
-                        "$numberLong": "1535905342000"
-                    }
-                },
-                "_id": {
-                    "$oid": "5b8c0e3ece78a224f0006122"
-                }
-            }
-        ]
-    }
-]
-```
-
-### HTTP Request
-`GET api/v1/company`
-
-`HEAD api/v1/company`
-
-
-<!-- END_4780e721012ed7f36e506754e8254633 -->
-
-<!-- START_c694d0d5865ccb731d64c8931b1befe1 -->
-## Store
-
-Добавляет в дервео базы узел для компании
-
-> Example request:
-
-```bash
-curl -X POST "http://localhost/api/v1/company" \
--H "Accept: application/json" \
-    -d "uid"="et" \
-    -d "name"="et" \
-
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/api/v1/company",
-    "method": "POST",
-    "data": {
-        "uid": "et",
-        "name": "et"
-},
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-
-### HTTP Request
-`POST api/v1/company`
-
-#### Parameters
-
-Parameter | Type | Status | Description
---------- | ------- | ------- | ------- | -----------
-    uid | string |  required  | 
-    name | string |  required  | 
-
-<!-- END_c694d0d5865ccb731d64c8931b1befe1 -->
-
-<!-- START_a3ad9c6f2c33440b96af5034836f9901 -->
-## Get
-Выводит конкретный объект
-
-> Example request:
-
-```bash
-curl -X GET "http://localhost/api/v1/company/{company}" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/api/v1/company/{company}",
-    "method": "GET",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-> Example response:
-
-```json
-{}
-```
-
-### HTTP Request
-`GET api/v1/company/{company}`
-
-`HEAD api/v1/company/{company}`
-
-
-<!-- END_a3ad9c6f2c33440b96af5034836f9901 -->
-
-<!-- START_2fea38ab65eac8cc420efd18be831669 -->
-## Update
-
-> Example request:
-
-```bash
-curl -X PUT "http://localhost/api/v1/company/{company}" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/api/v1/company/{company}",
-    "method": "PUT",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-
-### HTTP Request
-`PUT api/v1/company/{company}`
-
-`PATCH api/v1/company/{company}`
-
-
-<!-- END_2fea38ab65eac8cc420efd18be831669 -->
-
-<!-- START_0fd2a22cb210db9268cf1034ed855c27 -->
-## Remove
-Удаляет объект
-
-> Example request:
-
-```bash
-curl -X DELETE "http://localhost/api/v1/company/{company}" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/api/v1/company/{company}",
-    "method": "DELETE",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-
-### HTTP Request
-`DELETE api/v1/company/{company}`
-
-
-<!-- END_0fd2a22cb210db9268cf1034ed855c27 -->
-
 #Demand
-<!-- START_db687e08bedb8e09e996c420294838b4 -->
-## Get all
-Выводит коллекцию всех объектов
+
+Требования
+<!-- START_eda936a19c7351b93b03a410100337bd -->
+## Get All
+
+Получает коллекцию всех требований компании
 
 > Example request:
 
 ```bash
-curl -X GET "http://localhost/api/v1/demand" \
+curl -X GET "http://localhost/api/v1/company/{company}/demand" \
 -H "Accept: application/json"
 ```
 
@@ -505,7 +192,7 @@ curl -X GET "http://localhost/api/v1/demand" \
 var settings = {
     "async": true,
     "crossDomain": true,
-    "url": "http://localhost/api/v1/demand",
+    "url": "http://localhost/api/v1/company/{company}/demand",
     "method": "GET",
     "headers": {
         "accept": "application/json"
@@ -520,29 +207,34 @@ $.ajax(settings).done(function (response) {
 > Example response:
 
 ```json
-[]
+{
+    "success": false,
+    "error": {
+        "code": 404,
+        "message": "Указанный UID компании не найден"
+    }
+}
 ```
 
 ### HTTP Request
-`GET api/v1/demand`
+`GET api/v1/company/{company}/demand`
 
-`HEAD api/v1/demand`
+`HEAD api/v1/company/{company}/demand`
 
 
-<!-- END_db687e08bedb8e09e996c420294838b4 -->
+<!-- END_eda936a19c7351b93b03a410100337bd -->
 
-<!-- START_375a6d54f0f37753f2d6779b2d175766 -->
+<!-- START_d31ce41a65c6da6cda007f781d0e207f -->
 ## Store
+Создает новое требование компании
 
 > Example request:
 
 ```bash
-curl -X POST "http://localhost/api/v1/demand" \
+curl -X POST "http://localhost/api/v1/company/{company}/demand" \
 -H "Accept: application/json" \
-    -d "company_uid"="nulla" \
-    -d "demand"="nulla" \
-    -d "demand.name"="nulla" \
-    -d "demand.description"="nulla" \
+    -d "name"="totam" \
+    -d "description"="totam" \
 
 ```
 
@@ -550,13 +242,11 @@ curl -X POST "http://localhost/api/v1/demand" \
 var settings = {
     "async": true,
     "crossDomain": true,
-    "url": "http://localhost/api/v1/demand",
+    "url": "http://localhost/api/v1/company/{company}/demand",
     "method": "POST",
     "data": {
-        "company_uid": "nulla",
-        "demand": "nulla",
-        "demand.name": "nulla",
-        "demand.description": "nulla"
+        "name": "totam",
+        "description": "totam"
 },
     "headers": {
         "accept": "application/json"
@@ -570,27 +260,26 @@ $.ajax(settings).done(function (response) {
 
 
 ### HTTP Request
-`POST api/v1/demand`
+`POST api/v1/company/{company}/demand`
 
 #### Parameters
 
 Parameter | Type | Status | Description
 --------- | ------- | ------- | ------- | -----------
-    company_uid | string |  required  | 
-    demand | array |  required  | Minimum: `2`
-    demand.name | string |  required  | 
-    demand.description | string |  required  | 
+    name | string |  required  | 
+    description | string |  required  | 
 
-<!-- END_375a6d54f0f37753f2d6779b2d175766 -->
+<!-- END_d31ce41a65c6da6cda007f781d0e207f -->
 
-<!-- START_a98795a64b25b67ccf18601ade81075c -->
+<!-- START_08dd60506b01ea3cd0b77a25b5db9bce -->
 ## Get
-Выводит конкретный объект
+
+Получает конкретное требование компании
 
 > Example request:
 
 ```bash
-curl -X GET "http://localhost/api/v1/demand/{demand}" \
+curl -X GET "http://localhost/api/v1/company/{company}/demand/{demand}" \
 -H "Accept: application/json"
 ```
 
@@ -598,7 +287,7 @@ curl -X GET "http://localhost/api/v1/demand/{demand}" \
 var settings = {
     "async": true,
     "crossDomain": true,
-    "url": "http://localhost/api/v1/demand/{demand}",
+    "url": "http://localhost/api/v1/company/{company}/demand/{demand}",
     "method": "GET",
     "headers": {
         "accept": "application/json"
@@ -613,651 +302,34 @@ $.ajax(settings).done(function (response) {
 > Example response:
 
 ```json
-{}
+{
+    "success": false,
+    "error": {
+        "code": 0,
+        "message": ""
+    }
+}
 ```
 
 ### HTTP Request
-`GET api/v1/demand/{demand}`
+`GET api/v1/company/{company}/demand/{demand}`
 
-`HEAD api/v1/demand/{demand}`
+`HEAD api/v1/company/{company}/demand/{demand}`
 
 
-<!-- END_a98795a64b25b67ccf18601ade81075c -->
+<!-- END_08dd60506b01ea3cd0b77a25b5db9bce -->
 
-<!-- START_135ede75efee494e42c42a1a6eb6baab -->
+<!-- START_35d5a84171442452414458bdee861dcb -->
 ## Update
+Обновляет требование компании
 
 > Example request:
 
 ```bash
-curl -X PUT "http://localhost/api/v1/demand/{demand}" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/api/v1/demand/{demand}",
-    "method": "PUT",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-
-### HTTP Request
-`PUT api/v1/demand/{demand}`
-
-`PATCH api/v1/demand/{demand}`
-
-
-<!-- END_135ede75efee494e42c42a1a6eb6baab -->
-
-<!-- START_5b44f871c08ba31012f6637e4c83ef11 -->
-## Remove
-Удаляет объект
-
-> Example request:
-
-```bash
-curl -X DELETE "http://localhost/api/v1/demand/{demand}" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/api/v1/demand/{demand}",
-    "method": "DELETE",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-
-### HTTP Request
-`DELETE api/v1/demand/{demand}`
-
-
-<!-- END_5b44f871c08ba31012f6637e4c83ef11 -->
-
-#Position
-<!-- START_b418c6fa34a60daffb35bf6286529927 -->
-## Get all
-Выводит коллекцию всех объектов
-
-> Example request:
-
-```bash
-curl -X GET "http://localhost/api/v1/position" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/api/v1/position",
-    "method": "GET",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-> Example response:
-
-```json
-[
-    {
-        "_id": 1000,
-        "name": "teacher",
-        "description": "Воспитатель",
-        "created_at": "2018-09-02 16:04:31",
-        "updated_at": "2018-09-02 16:04:31"
-    },
-    {
-        "_id": 1001,
-        "name": "doctor",
-        "description": "Медицинский работник",
-        "created_at": "2018-09-02 16:04:31",
-        "updated_at": "2018-09-02 16:04:31"
-    },
-    {
-        "_id": 1002,
-        "name": "supplier",
-        "description": "МТО",
-        "created_at": "2018-09-02 16:04:31",
-        "updated_at": "2018-09-02 16:04:31"
-    },
-    {
-        "_id": 1003,
-        "name": "clerk",
-        "description": "Делопроизводитель",
-        "created_at": "2018-09-02 16:04:31",
-        "updated_at": "2018-09-02 16:04:31"
-    },
-    {
-        "_id": 1004,
-        "name": "administrator",
-        "description": "Управляющий",
-        "created_at": "2018-09-02 16:04:31",
-        "updated_at": "2018-09-02 16:04:31"
-    }
-]
-```
-
-### HTTP Request
-`GET api/v1/position`
-
-`HEAD api/v1/position`
-
-
-<!-- END_b418c6fa34a60daffb35bf6286529927 -->
-
-<!-- START_5e751c3a3c62c40dd6b382609d1f14ab -->
-## Store
-
-> Example request:
-
-```bash
-curl -X POST "http://localhost/api/v1/position" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/api/v1/position",
-    "method": "POST",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-
-### HTTP Request
-`POST api/v1/position`
-
-
-<!-- END_5e751c3a3c62c40dd6b382609d1f14ab -->
-
-<!-- START_664ae746449fd4b5cc40811fc91a7eaa -->
-## Get
-Выводит конкретный объект
-
-> Example request:
-
-```bash
-curl -X GET "http://localhost/api/v1/position/{position}" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/api/v1/position/{position}",
-    "method": "GET",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-> Example response:
-
-```json
-{}
-```
-
-### HTTP Request
-`GET api/v1/position/{position}`
-
-`HEAD api/v1/position/{position}`
-
-
-<!-- END_664ae746449fd4b5cc40811fc91a7eaa -->
-
-<!-- START_c6432985940405e89aa1de34fbe2bd6a -->
-## Update
-
-> Example request:
-
-```bash
-curl -X PUT "http://localhost/api/v1/position/{position}" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/api/v1/position/{position}",
-    "method": "PUT",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-
-### HTTP Request
-`PUT api/v1/position/{position}`
-
-`PATCH api/v1/position/{position}`
-
-
-<!-- END_c6432985940405e89aa1de34fbe2bd6a -->
-
-<!-- START_a39af3974557cbe523d138028916a34e -->
-## Remove
-Удаляет объект
-
-> Example request:
-
-```bash
-curl -X DELETE "http://localhost/api/v1/position/{position}" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/api/v1/position/{position}",
-    "method": "DELETE",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-
-### HTTP Request
-`DELETE api/v1/position/{position}`
-
-
-<!-- END_a39af3974557cbe523d138028916a34e -->
-
-#User
-<!-- START_b2892eb191cd19c0a6f1aae56ba43db4 -->
-## Get all
-Выводит коллекцию всех объектов
-
-> Example request:
-
-```bash
-curl -X GET "http://localhost/api/v1/user" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/api/v1/user",
-    "method": "GET",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-> Example response:
-
-```json
-[
-    {
-        "_id": "u1000",
-        "surname": "Иванов",
-        "name": "Иванов",
-        "middlename": "Иванович",
-        "email": "test1@test.ru",
-        "password": "$2y$10$gbMkezUBj3Oq\/.Gqcg8UROISjCXGDE0QeC7nDiaH3KR2Mg.itOdvK",
-        "is_verified": 0,
-        "remember_token": null,
-        "confirm_token": null,
-        "created_at": "2018-09-02 16:04:31",
-        "updated_at": "2018-09-02 16:04:31",
-        "test": {
-            "id": "123",
-            "id2": "aaa",
-            "id3": {
-                "bbb": "sdasdasdasd asd as d"
-            }
-        },
-        "phone": "+79222222222",
-        "dob": "1990-01-01",
-        "number": "100"
-    },
-    {
-        "_id": 1001,
-        "surname": "Петров",
-        "name": "Петр",
-        "middlename": "Петрович",
-        "email": "test2@test.ru",
-        "password": "$2y$10$Tz1hCc0DF5mEogQEopGU8ey8bA\/c9KieFUkcIuJ\/2l30BI.rrBhV2",
-        "is_verified": 0,
-        "remember_token": null,
-        "confirm_token": null,
-        "created_at": "2018-09-02 16:04:31",
-        "updated_at": "2018-09-02 16:04:31"
-    },
-    {
-        "_id": 1002,
-        "surname": "Юсупов",
-        "name": "Замир",
-        "middlename": "Алмасович",
-        "email": "jusupovz@gmail.com",
-        "password": "$2y$10$oTzlBbQH7jEyhaASufUvTurLjyV7tlwax\/amMtvp8S8znykm1FZTa",
-        "is_verified": 1,
-        "remember_token": null,
-        "confirm_token": null,
-        "created_at": "2018-09-02 16:04:31",
-        "updated_at": "2018-09-02 16:04:31"
-    }
-]
-```
-
-### HTTP Request
-`GET api/v1/user`
-
-`HEAD api/v1/user`
-
-
-<!-- END_b2892eb191cd19c0a6f1aae56ba43db4 -->
-
-<!-- START_96b8840d06e94c53a87e83e9edfb44eb -->
-## Store
-
-Добавляет нового пользователя
-
-> Example request:
-
-```bash
-curl -X POST "http://localhost/api/v1/user" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/api/v1/user",
-    "method": "POST",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-
-### HTTP Request
-`POST api/v1/user`
-
-
-<!-- END_96b8840d06e94c53a87e83e9edfb44eb -->
-
-<!-- START_eda2b3d78b052ccb36bffab3b344d72a -->
-## Get
-Выводит конкретный объект
-
-> Example request:
-
-```bash
-curl -X GET "http://localhost/api/v1/user/{user}" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/api/v1/user/{user}",
-    "method": "GET",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-> Example response:
-
-```json
-{}
-```
-
-### HTTP Request
-`GET api/v1/user/{user}`
-
-`HEAD api/v1/user/{user}`
-
-
-<!-- END_eda2b3d78b052ccb36bffab3b344d72a -->
-
-<!-- START_1006d782d67bb58039bde349972eb2f0 -->
-## Update
-
-Обновляет данные о пользователе
-
-> Example request:
-
-```bash
-curl -X PUT "http://localhost/api/v1/user/{user}" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/api/v1/user/{user}",
-    "method": "PUT",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-
-### HTTP Request
-`PUT api/v1/user/{user}`
-
-`PATCH api/v1/user/{user}`
-
-
-<!-- END_1006d782d67bb58039bde349972eb2f0 -->
-
-<!-- START_a5d7655acadc1b6c97d48e68f1e87be9 -->
-## Remove
-
-Удаляет пользователя
-
-> Example request:
-
-```bash
-curl -X DELETE "http://localhost/api/v1/user/{user}" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/api/v1/user/{user}",
-    "method": "DELETE",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-
-### HTTP Request
-`DELETE api/v1/user/{user}`
-
-
-<!-- END_a5d7655acadc1b6c97d48e68f1e87be9 -->
-
-#UserMeta
-<!-- START_345b08937ca816f9f362ace2fc097bd9 -->
-## Get all
-Выводит коллекцию всех объектов
-
-> Example request:
-
-```bash
-curl -X GET "http://localhost/api/v1/user_meta" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/api/v1/user_meta",
-    "method": "GET",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-> Example response:
-
-```json
-[
-    {
-        "_id": "5b8c0a0fce78a231fc003372",
-        "user__id": "u1000",
-        "key": "phone",
-        "value": "+79222222222",
-        "created_at": "2018-09-02 16:04:31",
-        "updated_at": "2018-09-02 16:04:31"
-    },
-    {
-        "_id": "5b8c0a0fce78a231fc003373",
-        "user__id": "u1000",
-        "key": "dob",
-        "value": "1990-01-01",
-        "created_at": "2018-09-02 16:04:31",
-        "updated_at": "2018-09-02 16:04:31"
-    },
-    {
-        "_id": "5b8c0a0fce78a231fc003374",
-        "user__id": "u1000",
-        "key": "number",
-        "value": "100",
-        "created_at": "2018-09-02 16:04:31",
-        "updated_at": "2018-09-02 16:04:31"
-    },
-    {
-        "_id": "5b8c0a0fce78a231fc003375",
-        "user__id": "000000000000000000000002",
-        "key": "phone",
-        "value": "+7933333333",
-        "created_at": "2018-09-02 16:04:31",
-        "updated_at": "2018-09-02 16:04:31"
-    },
-    {
-        "_id": "5b8c0a0fce78a231fc003376",
-        "user__id": "000000000000000000000002",
-        "key": "dob",
-        "value": "1970-06-01",
-        "created_at": "2018-09-02 16:04:31",
-        "updated_at": "2018-09-02 16:04:31"
-    },
-    {
-        "_id": "5b8c0a0fce78a231fc003377",
-        "user__id": "000000000000000000000002",
-        "key": "number",
-        "value": "101",
-        "created_at": "2018-09-02 16:04:31",
-        "updated_at": "2018-09-02 16:04:31"
-    }
-]
-```
-
-### HTTP Request
-`GET api/v1/user_meta`
-
-`HEAD api/v1/user_meta`
-
-
-<!-- END_345b08937ca816f9f362ace2fc097bd9 -->
-
-<!-- START_c488e976664f3572d3939cde6e5dcf69 -->
-## Store
-
-Добавляет метаданные для пользователя
-
-> Example request:
-
-```bash
-curl -X POST "http://localhost/api/v1/user_meta" \
+curl -X PUT "http://localhost/api/v1/company/{company}/demand/{demand}" \
 -H "Accept: application/json" \
-    -d "user__id"="perspiciatis" \
-    -d "key"="perspiciatis" \
-    -d "value"="perspiciatis" \
+    -d "name"="aliquid" \
+    -d "description"="aliquid" \
 
 ```
 
@@ -1265,12 +337,11 @@ curl -X POST "http://localhost/api/v1/user_meta" \
 var settings = {
     "async": true,
     "crossDomain": true,
-    "url": "http://localhost/api/v1/user_meta",
-    "method": "POST",
+    "url": "http://localhost/api/v1/company/{company}/demand/{demand}",
+    "method": "PUT",
     "data": {
-        "user__id": "perspiciatis",
-        "key": "perspiciatis",
-        "value": "perspiciatis"
+        "name": "aliquid",
+        "description": "aliquid"
 },
     "headers": {
         "accept": "application/json"
@@ -1284,121 +355,25 @@ $.ajax(settings).done(function (response) {
 
 
 ### HTTP Request
-`POST api/v1/user_meta`
+`PUT api/v1/company/{company}/demand/{demand}`
 
 #### Parameters
 
 Parameter | Type | Status | Description
 --------- | ------- | ------- | ------- | -----------
-    user__id | string |  required  | 
-    key | string |  required  | 
-    value | string |  required  | 
+    name | string |  required  | 
+    description | string |  required  | 
 
-<!-- END_c488e976664f3572d3939cde6e5dcf69 -->
+<!-- END_35d5a84171442452414458bdee861dcb -->
 
-<!-- START_ffb286359db7489da5a60dec14cc2fda -->
-## Get UserMeta
-
-Выводит метаданные по ID пользователя
-
-> Example request:
-
-```bash
-curl -X GET "http://localhost/api/v1/user_meta/{user_metum}" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/api/v1/user_meta/{user_metum}",
-    "method": "GET",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-> Example response:
-
-```json
-null
-```
-
-### HTTP Request
-`GET api/v1/user_meta/{user_metum}`
-
-`HEAD api/v1/user_meta/{user_metum}`
-
-
-<!-- END_ffb286359db7489da5a60dec14cc2fda -->
-
-<!-- START_8a153808e32b539395220b7d0f7150c0 -->
-## Update
-
-Обновляет метаданные о пользователе
-
-> Example request:
-
-```bash
-curl -X PUT "http://localhost/api/v1/user_meta/{user_metum}" \
--H "Accept: application/json" \
-    -d "user__id"="quis" \
-    -d "key"="quis" \
-    -d "value"="quis" \
-
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/api/v1/user_meta/{user_metum}",
-    "method": "PUT",
-    "data": {
-        "user__id": "quis",
-        "key": "quis",
-        "value": "quis"
-},
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-
-### HTTP Request
-`PUT api/v1/user_meta/{user_metum}`
-
-`PATCH api/v1/user_meta/{user_metum}`
-
-#### Parameters
-
-Parameter | Type | Status | Description
---------- | ------- | ------- | ------- | -----------
-    user__id | string |  required  | 
-    key | string |  required  | 
-    value | string |  required  | 
-
-<!-- END_8a153808e32b539395220b7d0f7150c0 -->
-
-<!-- START_4afc465adfe24bfe6acd4e4cbbcb0b20 -->
+<!-- START_f328c76b749f901e3e478d240b901353 -->
 ## Remove
-Удаляет объект
+Удаляет требование компании по ID
 
 > Example request:
 
 ```bash
-curl -X DELETE "http://localhost/api/v1/user_meta/{user_metum}" \
+curl -X DELETE "http://localhost/api/v1/company/{company}/demand/{demand}" \
 -H "Accept: application/json"
 ```
 
@@ -1406,7 +381,7 @@ curl -X DELETE "http://localhost/api/v1/user_meta/{user_metum}" \
 var settings = {
     "async": true,
     "crossDomain": true,
-    "url": "http://localhost/api/v1/user_meta/{user_metum}",
+    "url": "http://localhost/api/v1/company/{company}/demand/{demand}",
     "method": "DELETE",
     "headers": {
         "accept": "application/json"
@@ -1420,8 +395,8 @@ $.ajax(settings).done(function (response) {
 
 
 ### HTTP Request
-`DELETE api/v1/user_meta/{user_metum}`
+`DELETE api/v1/company/{company}/demand/{demand}`
 
 
-<!-- END_4afc465adfe24bfe6acd4e4cbbcb0b20 -->
+<!-- END_f328c76b749f901e3e478d240b901353 -->
 
